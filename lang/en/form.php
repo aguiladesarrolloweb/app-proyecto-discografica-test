@@ -1,0 +1,33 @@
+<?php
+
+return [
+    'Name' => 'Name',
+    'Email' => 'Email',
+    'Password' => 'Password',
+    'Confirm Password' => 'Confirm Password',
+    'I agree to the :terms_of_service and :privacy_policy' => 'I agree to the :terms_of_service and :privacy_policy',
+    'terms_of_service' => 'Terms of service',
+    'privacy_policy' => 'Privacy policy',
+    'Already registered?' => 'Already Registered?',
+    'Register' => 'Register',
+    'Confirm' => 'Confirm',
+    'Message Confirm Password' => 'This is a secure area of the application. Please confirm your password before continuing.',
+    'Message Forgotten Password' => 'Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.',
+    'Email Password Reset Link' => 'Email Password Reset Link.',
+    'Remember me' => 'Remember me.',
+    'Forgot your password' => 'Forgot your password?',
+    'Reset Password' => 'Reset Password',
+    'Log in' => 'Log in',
+    'Auth Code Message' => 'Please confirm access to your account by entering the authentication code provided by your authenticator application.',
+    'Recovery Code Message' => 'Please confirm access to your account by entering one of your emergency recovery codes.',
+    'Code' => 'Code',
+    'Recovery Code' => 'Recovery Code',
+    'Use a recovery code' => 'Use a recovery code',
+    'Use an authentication code' => 'Use an authentication code',
+    'Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.' => 'Before continuing, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.',
+    'A new verification link has been sent to the email address you provided in your profile settings.' => 'A new verification link has been sent to the email address you provided in your profile settings.',
+    'Resend Verification Email' => 'Reenviar e-mail de verificação',
+    'Edit Profile' => 'Edit Profile',
+    'Log Out' => 'Log Out',
+
+];
