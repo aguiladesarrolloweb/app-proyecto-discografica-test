@@ -13,7 +13,7 @@ class PackageUserPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class PackageUserPolicy
      */
     public function view(User $user, PackageUser $packageUser): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class PackageUserPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class PackageUserPolicy
      */
     public function update(User $user, PackageUser $packageUser): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class PackageUserPolicy
      */
     public function delete(User $user, PackageUser $packageUser): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class PackageUserPolicy
      */
     public function restore(User $user, PackageUser $packageUser): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class PackageUserPolicy
      */
     public function forceDelete(User $user, PackageUser $packageUser): bool
     {
-        //
+        return true;
     }
 }

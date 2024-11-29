@@ -13,7 +13,7 @@ class PromoPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class PromoPolicy
      */
     public function view(User $user, Promo $promo): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class PromoPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class PromoPolicy
      */
     public function update(User $user, Promo $promo): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class PromoPolicy
      */
     public function delete(User $user, Promo $promo): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class PromoPolicy
      */
     public function restore(User $user, Promo $promo): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class PromoPolicy
      */
     public function forceDelete(User $user, Promo $promo): bool
     {
-        //
+        return true;
     }
 }

@@ -13,7 +13,7 @@ class SongPolicy
      */
     public function viewAny(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class SongPolicy
      */
     public function view(User $user, Song $song): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -29,7 +29,7 @@ class SongPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -37,7 +37,7 @@ class SongPolicy
      */
     public function update(User $user, Song $song): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -45,7 +45,7 @@ class SongPolicy
      */
     public function delete(User $user, Song $song): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -53,7 +53,7 @@ class SongPolicy
      */
     public function restore(User $user, Song $song): bool
     {
-        //
+        return true;
     }
 
     /**
@@ -61,6 +61,6 @@ class SongPolicy
      */
     public function forceDelete(User $user, Song $song): bool
     {
-        //
+        return true;
     }
 }
