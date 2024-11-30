@@ -7,6 +7,8 @@ namespace App\Models;
 use App\Notifications\ResetPasswordCustom as ResetPasswordNotification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -25,6 +27,7 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
     use SoftDeletes;
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -34,6 +37,17 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'current_team_id',
+        'profile_photo_path',
+        'address',
+        'country',
+        'post_code',
+        'category',
+        'record_label',
+        'is_independent_artist',
+        'producer_name',
+        'manager_name',
+        'ar_name',
     ];
 
     /**
@@ -73,5 +87,32 @@ class User extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPasswordNotification($token));
+    }
+
+
+    public function formDistributions() : HasMany
+    {
+        return $this->hasMany(FormDistribution::class,"user_id","id");
+    }
+
+    public function packages() : BelongsToMany
+    {
+        return $this->belongsToMany(Package::class,"packages_users","user_id","package_id");
+    }
+    
+    public function paymentTransactions() : HasMany
+    {
+        return $this->hasMany(PaymentTransaction::class,"payment_transactions","user_id","id");
+    }
+
+    
+    public function roles() : BelongsToMany
+    {
+        return $this->belongsToMany(Role::class,"roles_users","user_id","role_id");
+    }
+
+    public function tracks() : HasMany
+    {
+        return $this->hasMany(Track::class,"user_id","id");
     }
 }

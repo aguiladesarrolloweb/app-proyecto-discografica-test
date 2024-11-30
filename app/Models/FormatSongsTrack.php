@@ -5,10 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RoleUser extends Model
+class FormatSongsTrack extends Model
 {
-    /** @use HasFactory<\Database\Factories\RolUserFactory> */
+    /** @use HasFactory<\Database\Factories\FormatSongsTrackFactory> */
     use HasFactory;
-    
-    protected $table = "roles_users";
 }

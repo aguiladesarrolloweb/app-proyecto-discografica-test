@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSongRequest;
-use App\Http\Requests\UpdateSongRequest;
-use App\Models\Song;
+use App\Http\Requests\StoreFormatSongsTrackRequest;
+use App\Http\Requests\UpdateFormatSongsTrackRequest;
+use App\Models\FormatSongsTrack;
 
-class SongController extends Controller
+class FormatSongsTrackController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class SongController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSongRequest $request)
+    public function store(StoreFormatSongsTrackRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class SongController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Song $song)
+    public function show(FormatSongsTrack $formatSongsTrack)
     {
         //
     }
@@ -43,7 +43,7 @@ class SongController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Song $song)
+    public function edit(FormatSongsTrack $formatSongsTrack)
     {
         //
     }
@@ -51,7 +51,7 @@ class SongController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSongRequest $request, Song $song)
+    public function update(UpdateFormatSongsTrackRequest $request, FormatSongsTrack $formatSongsTrack)
     {
         //
     }
@@ -59,7 +59,7 @@ class SongController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Song $song)
+    public function destroy(FormatSongsTrack $formatSongsTrack)
     {
         //
     }

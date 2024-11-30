@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('albums_tracks', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->unique(); 
-            $table->string('slug', 100)->unique(); 
-            $table->text('description')->nullable(); 
+            $table->foreignId('album_id')->references('id')->on('albums');
+            $table->foreignId('track_id')->references('id')->on('tracks');
         });
     }
 
@@ -24,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('albums_tracks');
     }
 };

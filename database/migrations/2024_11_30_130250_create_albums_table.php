@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\FormatEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('packages', function (Blueprint $table) {
+        Schema::create('albums', function (Blueprint $table) {
             $table->id();
-            $table->string("package_name");
-            $table->enum('format', FormatEnum::options());
-            $table->integer('songs_limit');
-            $table->decimal('price', 10, 2);
-            $table->integer('points')->default(0);
+            $table->string('album_title'); 
+            $table->text('album_description')->nullable(); 
+            $table->dateTime('release_date'); 
+            $table->string('album_cover_image')->nullable(); 
+            $table->string('genre')->nullable(); 
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('packages');
+        Schema::dropIfExists('albums');
     }
 };

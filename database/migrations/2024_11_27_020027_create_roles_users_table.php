@@ -15,6 +15,9 @@ return new class extends Migration
             
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('role_id')->references('id')->on('roles');
+            $table->foreignId('user_id_created_by')->nullable()->references('id')->on('users');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
