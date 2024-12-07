@@ -24,6 +24,7 @@ width: 100% !important;
 }
 </style>
 {{ $head ?? '' }}
+@vite('resources/css/app.css')
 </head>
 <body>
 

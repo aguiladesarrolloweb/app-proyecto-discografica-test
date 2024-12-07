@@ -1,0 +1,48 @@
+services:
+  mysql:
+    image: 'bitnami/mysql:8.4.3'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_USER=bn_myapp
+      - MYSQL_DATABASE=bitnami_myapp
+    networks:
+      - laravel-network
+    volumes:
+      - mysql_data:/bitnami/mysql
+    ports:
+      - '3306:3306'
+
+  laravel:
+    image: 'bitnami/laravel:11.3.2'
+    ports:
+      - '8000:8000'
+      - "5173:5173"
+    environment:
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_USERNAME=bn_myapp
+      - DB_DATABASE=bitnami_myapp
+      - MAIL_HOST=mailhog
+      - MAIL_PORT=1025
+      - MAIL_FROM_ADDRESS=test@example.com
+    networks:
+      - laravel-network
+    volumes:
+      - ./app-proyecto-discografica-test:/app
+    depends_on:
+      - mailhog
+
+  mailhog:
+    image: 'mailhog/mailhog:v1.0.1'
+    ports:
+      - '1025:1025'  # Puerto SMTP
+      - '8025:8025'  # Interfaz web
+    networks:
+      - laravel-network
+
+networks:
+  laravel-network:
+    driver: bridge
+
+volumes:
+  mysql_data:

@@ -11,8 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('package_users', function (Blueprint $table) {
-            $table->id();
+        Schema::create('packages_users', function (Blueprint $table) {
             $table->foreignId('user_id')->references('id')->on('users');
             $table->foreignId('package_id')->references('id')->on('packages');
             $table->timestamp('purchase_date');
@@ -25,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('package_users');
+        Schema::dropIfExists('packages_users');
     }
 };

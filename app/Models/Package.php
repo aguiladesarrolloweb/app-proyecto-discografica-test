@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 
 class Package extends Model
 {
@@ -26,24 +27,24 @@ class Package extends Model
         'updated_at', 
     ];
 
+    public function albums(): MorphToMany
+    {
+        return $this->morphedByMany(Album::class, 'packageable');
+    }
+
     public function formDistributions() : HasMany
     {
         return $this->hasMany(FormDistribution::class,"package_id","id");
     }
 
-    public function packageables()
-    {
-        return $this->morphToMany(Packageable::class, 'packageable');
-    }
-
     public function paymentTransactions() : HasMany
     {
-        return $this->hasMany(PaymentTransaction::class,"payment_transactions","package_id","id");
+        return $this->hasMany(PaymentTransaction::class,"package_id","id");
     }
 
-    public function tracks() : HasMany
+    public function tracks(): MorphToMany
     {
-        return $this->hasMany(Track::class,"package_id","id");
+        return $this->morphedByMany(Track::class, 'packageable');
     }
 
     public function users() : BelongsToMany

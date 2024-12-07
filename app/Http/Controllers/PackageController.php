@@ -5,15 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Package;
+use App\Services\PackageService;
 
 class PackageController extends Controller
 {
+    protected $packageService;
+
+    public function __construct(PackageService $packageService)
+    {
+        $this->packageService = $packageService;
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $packages = Package::paginate(10);
+        return  view("packages.index", compact("packages"));
     }
 
     /**
@@ -21,7 +29,7 @@ class PackageController extends Controller
      */
     public function create()
     {
-        //
+        return  view("packages.create");
     }
 
     /**
@@ -29,7 +37,15 @@ class PackageController extends Controller
      */
     public function store(StorePackageRequest $request)
     {
-        //
+        try 
+        {
+            $this->packageService->createPackage($request->toArray());
+            return redirect()->route('packages.index')->banner('Paquete Creado Exitosamente');
+        } 
+        catch (\Exception $e) 
+        {
+            return redirect()->route('packages.index')->dangerBanner('Error a la hora de la creación de paquete');
+        }
     }
 
     /**
@@ -37,7 +53,7 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        //
+        return view('packages.show', compact('package'));
     }
 
     /**
@@ -45,7 +61,7 @@ class PackageController extends Controller
      */
     public function edit(Package $package)
     {
-        //
+        return view('packages.edit', compact('package'));
     }
 
     /**
@@ -61,6 +77,16 @@ class PackageController extends Controller
      */
     public function destroy(Package $package)
     {
-        //
+        try 
+        {
+            $this->packageService->deletePackage($package);
+            return redirect()->route('packages.index')->banner('Paquete Eliminado Exitosamente');
+        } 
+        catch (\Exception $e) 
+        {
+            return redirect()->route('packages.index')->dangerBanner('Error a la hora de borrar el paquete');
+        }
+
     }
+    
 }

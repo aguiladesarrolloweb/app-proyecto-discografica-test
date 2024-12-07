@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('format_songs_tracks', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('format_song_id')->references('id')->on('format_songs'); 
             $table->foreignId('track_id')->references('id')->on('tracks'); 
             $table->tinyInteger('version');

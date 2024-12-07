@@ -14,4 +14,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+     /* ROTES MODULES CARPETA */
+     foreach (glob(__DIR__ . '/modules/*.php') as $routeFile) {
+        require_once $routeFile;
+    }
 });

@@ -127,6 +127,13 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
 
+
+        'packagelog' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/packages.log'),
+            'days' => 180,
+        ],
+
     ],
 
 ];

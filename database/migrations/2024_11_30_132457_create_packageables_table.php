@@ -12,7 +12,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('packageables', function (Blueprint $table) {
-            $table->id();
             $table->foreignId('package_id')->references('id')->on('packages');
             $table->morphs('packageable');
             $table->timestamps();
