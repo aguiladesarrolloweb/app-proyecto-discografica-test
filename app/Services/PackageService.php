@@ -4,6 +4,7 @@ namespace App\Services;
 use App\Models\Package;
 use App\Models\Album;
 use App\Traits\ErrorLogTrait;
+use Carbon\Carbon;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -48,6 +49,8 @@ class PackageService
 
                 $package->albums()->attach($album->id, [
                     'packageable_type' => Album::class,
+                    'created_at' => Carbon::now(),
+                    'updated_at' => Carbon::now(),
                 ]);
             }
 

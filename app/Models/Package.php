@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Facades\DB;
 
 class Package extends Model
 {
@@ -50,6 +51,50 @@ class Package extends Model
     public function users() : BelongsToMany
     {
         return $this->belongsToMany(User::class,"packages_users","package_id","user_id");
+    }
+
+
+    public static function getAlbums ($id)
+    {
+        return DB::select(
+            "SELECT a.id,a.album_title,a.album_description,a.release_date,a.album_cover_image,
+            a.genre,a.created_at,a.updated_at
+            from albums a
+            inner join packageables p on a.id= p.packageable_id and p.packageable_type = 'App\Models\Album'
+            where p.package_id = ?", [$id]);
+    }
+
+
+    /**
+     * * GET USERS, TRACKS AND/OR ALBUMS FROM A PACKAGE
+     */
+    public static function getPackage($id)
+    {
+        return collect([
+            'albums' => self::getAlbums($id),
+            'tracks' => self::getTracks($id),
+            'users' => self::getUsers($id)
+        ]);
+    }
+
+    public static function getTracks ($id)
+    {
+        return DB::select(
+            "SELECT t.id, t.title, t.genre, t.duration, t.completion_date, t.original_file,
+            t.final_file, t.comments, t.status, t.file_format, t.current_version, t.limit_version,
+            t.created_at,t.updated_at 
+            from tracks t
+            inner join packageables p on t.id= p.packageable_id and p.packageable_type = 'App\Models\Track'
+            where p.package_id = ?", [$id]);
+    }
+
+    public static function getUsers ($id)
+    {
+        return DB::select(
+            'SELECT u.id, u.name, u.email 
+            from users u
+            inner join packages_users pu on u.id= pu.user_id
+            where pu.package_id = ?', [$id]);
     }
 
 

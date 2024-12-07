@@ -6,6 +6,7 @@ use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Package;
 use App\Services\PackageService;
+use Illuminate\Support\Facades\DB;
 
 class PackageController extends Controller
 {
@@ -53,7 +54,9 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        return view('packages.show', compact('package'));
+        $package_data = Package::getPackage($package->id);
+
+        return view('packages.show', compact('package','package_data'));
     }
 
     /**
