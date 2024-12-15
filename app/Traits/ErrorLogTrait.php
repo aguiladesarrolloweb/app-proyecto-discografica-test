@@ -18,6 +18,5 @@ trait ErrorLogTrait
             'class' => get_class($exception),
         ]);
 
-        throw new \InvalidArgumentException("$message");
     }
 }

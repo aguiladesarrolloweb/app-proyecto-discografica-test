@@ -15,6 +15,43 @@
                     <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+
+                    <!-- Package Dropdown -->
+                    <div class="relative" x-data="{ open: false }">
+                        <button 
+                            @click="open = !open" 
+                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
+                        >
+                            {{ __('Package') }}
+                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <div 
+                            x-show="open" 
+                            @click.away="open = false"
+                            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg origin-top-left left-0"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 scale-95"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100"
+                            x-transition:leave-end="opacity-0 scale-95"
+                        >
+                            <div class="rounded-md shadow-xs bg-white">
+                                <x-dropdown-link href="{{ route('packages.index') }}">
+                                    {{ __('Index') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link href="{{ route('packages.create') }}">
+                                    {{ __('Create') }}
+                                </x-dropdown-link>
+                                {{-- <x-dropdown-link href="{{ route('packages.edit') }}">
+                                    {{ __('Edit') }}
+                                </x-dropdown-link> --}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -142,6 +179,19 @@
             <x-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
+            <!-- Responsive Package Links -->
+            <div class="space-y-1">
+                <x-responsive-nav-link href="{{ route('packages.index') }}" :active="request()->routeIs('packages.index')">
+                    {{ __('Package Index') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link href="{{ route('packages.create') }}" :active="request()->routeIs('packages.create')">
+                    {{ __('Create Package') }}
+                </x-responsive-nav-link>
+                {{-- <x-responsive-nav-link href="{{ route('packages.edit') }}" :active="request()->routeIs('packages.edit')">
+                    {{ __('Edit Package') }}
+                </x-responsive-nav-link> --}}
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->

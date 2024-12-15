@@ -47,7 +47,7 @@ class Track extends Model
 
     public function formatSongs() : HasMany
     {
-        return $this->hasMany(FormatSong::class,"user_id","id");
+        return $this->hasMany(FormatSong::class,"track_id","id");
     }
 
     public function formatSongsVersions() : BelongsToMany

@@ -3,11 +3,14 @@ namespace App\Services;
 
 use App\Models\Package;
 use App\Models\Album;
+use App\Models\Packageable;
 use App\Traits\ErrorLogTrait;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class PackageService
 {
@@ -28,6 +31,7 @@ class PackageService
                 'songs_limit' => $data['songs_limit'],
                 'price' => 0,
                 'points' => 0,
+                'package_path' => $this->createPackageFolder($user['id'],$data['package_name']),
             ]);
 
             
@@ -66,14 +70,43 @@ class PackageService
         }
     }
 
+    function createPackageFolder($user_id, $package_name)
+    {
+        // Sanitizar el nombre del paquete
+        $sanitized_package_name = Str::slug($package_name);
+
+        // Obtener el timestamp actual
+        $timestamp = Carbon::now()->timestamp;
+
+        // Construir la ruta de la carpeta
+        $folder_path = "{$user_id}-{$sanitized_package_name}-{$timestamp}";
+
+        // Crear la carpeta
+        Storage::makeDirectory($folder_path);
+
+        return $folder_path;
+    }
+
     public function deletePackage (Package $package)
     {
+
+        
         DB::beginTransaction();
+        
         try 
         {
-            // Detach de relaciones polimórficas
-            $package->albums()->detach();
-            $package->tracks()->detach();
+                
+            foreach ($package->tracks as $track) 
+            {
+                $track->formatSongsVersions()->detach();
+                $track->formatSongs()->delete();
+            }   
+            
+            Packageable::where("package_id",$package->id)->delete();
+            
+
+            
+
 
             // Eliminar relaciones "HasMany"
             $package->formDistributions()->delete();
@@ -81,6 +114,9 @@ class PackageService
 
             // Detach de la relación "BelongsToMany"
             $package->users()->detach();
+
+
+            Storage::deleteDirectory($package->package_path);
 
             // Eliminar el paquete
             $package->delete();

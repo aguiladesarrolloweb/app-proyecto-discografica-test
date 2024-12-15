@@ -128,9 +128,21 @@ return [
         ],
 
 
+        'filelog' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/files.log'),
+            'days' => 180,
+        ],
+
         'packagelog' => [
             'driver' => 'single',
             'path' => storage_path('logs/packages.log'),
+            'days' => 180,
+        ],
+
+        'tracklog' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/tracks.log'),
             'days' => 180,
         ],
 

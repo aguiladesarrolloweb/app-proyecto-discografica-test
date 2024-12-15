@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class Package extends Model
 {
@@ -20,6 +21,7 @@ class Package extends Model
         'songs_limit',
         'price',
         'points',
+        'package_path',
     ];
 
     protected $guarded = [
@@ -36,6 +38,11 @@ class Package extends Model
     public function formDistributions() : HasMany
     {
         return $this->hasMany(FormDistribution::class,"package_id","id");
+    }
+
+    public function packageables()
+    {
+        return $this->morphMany(Packageable::class, 'packageable');
     }
 
     public function paymentTransactions() : HasMany
@@ -62,6 +69,33 @@ class Package extends Model
             from albums a
             inner join packageables p on a.id= p.packageable_id and p.packageable_type = 'App\Models\Album'
             where p.package_id = ?", [$id]);
+    }
+
+
+
+    public static function getFiles(Package $package)
+    {
+        $folder = $package->package_path;
+        $files_final = [];
+
+        // Verificar que la carpeta existe
+        if (Storage::disk('public')->exists($folder)) 
+        {
+            // Listar todos los archivos en la carpeta
+            $files = Storage::disk('public')->files($folder);
+        
+            // Crear URLs para la descarga
+            $fileUrls = collect($files)->map(function ($file) {
+                return [
+                    'name' => basename($file),
+                    'url' => Storage::disk('public')->url($file),
+                ];
+            });
+
+            $files_final = $fileUrls;
+        }
+
+        return $files_final;
     }
 
 

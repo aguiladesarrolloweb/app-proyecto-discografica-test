@@ -7,6 +7,7 @@ use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Package;
 use App\Services\PackageService;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 
 class PackageController extends Controller
 {
@@ -54,9 +55,11 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
+        $files = Package::getFiles($package);
+
         $package_data = Package::getPackage($package->id);
 
-        return view('packages.show', compact('package','package_data'));
+        return view('packages.show', compact('files','package','package_data'));
     }
 
     /**
@@ -91,5 +94,18 @@ class PackageController extends Controller
         }
 
     }
+
+    public function fileUpload(Package $package)
+    {
+        return view('packages.file-upload', compact('package'));
+    }
+
+
+
+    public function trackCreate(Package $package)
+    {
+        return view('packages.track-create', compact('package'));
+    }
+
     
 }
