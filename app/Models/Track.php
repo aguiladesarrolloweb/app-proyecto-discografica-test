@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class Track extends Model
 {
@@ -58,5 +60,36 @@ class Track extends Model
     public function packages() : MorphToMany
     {
         return $this->morphToMany(Package::class, 'packageable');
+    }
+
+
+    public static function getLastFile(int $track_id)
+    {
+        $track = Track::find($track_id);
+        $folder = $track->packages[0]->package_path;
+        $file_path = $folder.'/'.$track->final_file;
+
+        $file_data = [
+            'name' => basename($file_path),
+            'url' => Storage::disk('public')->url($file_path),
+        ];
+
+        return $file_data;
+    }
+
+
+    public static function getLastFormatSong(int $track_id)
+    {
+        $last_format_song = FormatSongsTrack::where('track_id', $track_id)
+            ->where('version', function($query) use ($track_id) {
+                $query->selectRaw('MAX(version)')
+                    ->from('format_songs_tracks as fst1')
+                    ->where('fst1.track_id', $track_id);
+            })
+            ->with('formatSong') // Asegúrate de tener la relación definida en el modelo.
+            ->get()
+            ->pluck('formatSong')[0];
+
+        return $last_format_song;
     }
 }

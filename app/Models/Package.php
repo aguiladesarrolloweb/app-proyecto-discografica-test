@@ -68,7 +68,7 @@ class Package extends Model
             a.genre,a.created_at,a.updated_at
             from albums a
             inner join packageables p on a.id= p.packageable_id and p.packageable_type = 'App\Models\Album'
-            where p.package_id = ?", [$id]);
+            where p.package_id = $id");
     }
 
 
@@ -86,6 +86,7 @@ class Package extends Model
         
             // Crear URLs para la descarga
             $fileUrls = collect($files)->map(function ($file) {
+                
                 return [
                     'name' => basename($file),
                     'url' => Storage::disk('public')->url($file),
@@ -119,16 +120,16 @@ class Package extends Model
             t.created_at,t.updated_at 
             from tracks t
             inner join packageables p on t.id= p.packageable_id and p.packageable_type = 'App\Models\Track'
-            where p.package_id = ?", [$id]);
+            where p.package_id = $id");
     }
 
     public static function getUsers ($id)
     {
         return DB::select(
-            'SELECT u.id, u.name, u.email 
+            "SELECT u.id, u.name, u.email 
             from users u
             inner join packages_users pu on u.id= pu.user_id
-            where pu.package_id = ?', [$id]);
+            where pu.package_id = $id");
     }
 
 

@@ -51,19 +51,20 @@
     <h4>TRACKS</h4>
     @forelse($package['tracks'] as $track)
         <li>
-            <strong>Track:</strong> {{ $track->title }}
+            <strong>{{ $track->title }}</strong> 
             <ul>
                 <li>Description: {{ $track->genre }}</li>
                 <li>status: {{ $track->status }}</li>
                 <li>file format: {{ $track->file_format }}</li>
                 {{-- BOTON DE SHOW TRACK --}}
-
+                <a href="{{ route('tracks.show', $track->id) }}" class="btn btn-info btn-sm">Ver</a>
+                <a href="{{ route('tracks.edit', $track->id) }}" class="btn btn-info btn-sm">Editar</a>
                 {{-- TODO:: ELIMINAR FILE  --}}
-            <form action="{{ route('track.destroy', $track->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este track?');">
+            {{-- <form action="{{ route('track.destroy', $track->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este track?');">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
-            </form>
+            </form> --}}
             </ul>
         </li>
     @empty
@@ -77,12 +78,13 @@
     <p>
         {{ $file['name'] }}
         <a href="{{ $file['url'] }}" download>Descargar</a>
-        {{-- TODO:: ELIMINAR FILE  --}}
-        {{-- <form action="{{ route('file.destroy', ) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este archivo?');">
+        
+        <form action="{{ route('files.delete', $file['name']) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este archivo?');">
             @csrf
+            <input type="hidden" name="package_id" value="{{$package->id}}">
             @method('DELETE')
             <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
-        </form> --}}
+        </form>
     </p>
     @empty
         <p>No files uploaded</p>

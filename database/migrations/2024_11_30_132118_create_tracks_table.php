@@ -1,6 +1,7 @@
 <?php
 
 use App\Enums\FileFormatEnum;
+use App\Enums\FileStatusEnum;
 use App\Enums\StatusEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -24,7 +25,7 @@ return new class extends Migration
             $table->string('original_file');
             $table->string('final_file');
             $table->text('comments')->nullable();
-            $table->enum('status', StatusEnum::options());
+            $table->enum('status', FileStatusEnum::options());
             $table->enum('file_format', FileFormatEnum::options());
             $table->tinyInteger('current_version'); // show the current version of the track
             $table->tinyInteger('limit_version'); // how many versions can change the user

@@ -27,9 +27,10 @@ class FileService
         return Storage::disk($this->disk)->download($filePath);
     }
 
-    public function delete($filePath)
+    public function delete($file_name)
     {
-        return Storage::disk($this->disk)->delete($filePath);
+
+        return Storage::disk($this->disk)->delete($file_name);
     }
 
     public function update($file, $path, $oldFilePath = null)
@@ -68,5 +69,19 @@ class FileService
 
         return $metadata;
     }
+
+
+    public function getFile($file_name)
+    {
+        // Explode por el guion bajo para aislar la parte inicial del nombre
+        $parts = explode('-', $file_name);
+        // Reensamblamos las primeras 3 partes para obtener la carpeta
+        $folder_name = implode('-', array_slice($parts, 0, 3));
+
+        $path = $folder_name . '/' . $file_name;
+
+        return $path;
+    }
+
     
 }

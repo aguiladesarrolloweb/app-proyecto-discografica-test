@@ -82,7 +82,7 @@ class PackageService
         $folder_path = "{$user_id}-{$sanitized_package_name}-{$timestamp}";
 
         // Crear la carpeta
-        Storage::makeDirectory($folder_path);
+        Storage::disk('public')->makeDirectory($folder_path);
 
         return $folder_path;
     }
@@ -116,7 +116,7 @@ class PackageService
             $package->users()->detach();
 
 
-            Storage::deleteDirectory($package->package_path);
+            Storage::disk('public')->deleteDirectory($package->package_path);
 
             // Eliminar el paquete
             $package->delete();

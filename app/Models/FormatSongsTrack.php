@@ -9,4 +9,10 @@ class FormatSongsTrack extends Model
 {
     /** @use HasFactory<\Database\Factories\FormatSongsTrackFactory> */
     use HasFactory;
+
+
+    public function formatSong()
+{
+    return $this->belongsTo(FormatSong::class, 'format_song_id');
+}
 }

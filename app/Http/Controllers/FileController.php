@@ -6,6 +6,7 @@ use App\Models\Package;
 use App\Services\FileService;
 use App\Traits\ErrorLogTrait;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -48,11 +49,13 @@ class FileController extends Controller
         return $this->file_service->download($filePath);
     }
 
-    public function delete($filePath)
+    public function delete(Request $request, $filePath)
     {
-        $this->file_service->delete($filePath);
+        $package = Package::find($request->package_id);
 
-        return response()->json(['message' => 'File deleted successfully'], 200);
+        Storage::disk('public')->delete($package->package_path.'/'. $filePath);
+
+        return back();
     }
 
     public function update(Request $request, $oldFilePath)

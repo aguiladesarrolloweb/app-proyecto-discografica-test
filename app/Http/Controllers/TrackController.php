@@ -65,7 +65,8 @@ class TrackController extends Controller
      */
     public function show(Track $track)
     {
-        //
+        $file = Track::getLastFile($track->id);
+        return view("tracks.show",compact("track",'file'));
     }
 
     /**
@@ -73,15 +74,25 @@ class TrackController extends Controller
      */
     public function edit(Track $track)
     {
-        //
+        return view("tracks.edit",compact("track"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTrackRequest $request, Track $track)
+    public function update(UpdateTrackRequest $request)
     {
-        //
+        try 
+        {
+            $this->track_service->updateTrack($request);
+            return redirect()->route('tracks.edit',["track" =>$request->input('id')])->banner('Track Modificado Exitosamente');
+        } 
+        catch (\Throwable $th) 
+        {
+            return redirect()->route('tracks.edit',["track" =>$request->input('id')])->dangerBanner('Error a la hora de modificar Track');
+        }
+
+
     }
 
     /**
