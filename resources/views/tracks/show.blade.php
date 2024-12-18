@@ -51,7 +51,7 @@
         <!-- Comments -->
         <div class="mb-3">
             <label class="form-label"><strong>Comments:</strong></label>
-            <p class="form-control-plaintext">{{ $track->comments ?? 'N/A' }}</p>
+            <p class="form-control-plaintext">{{ $track->comments ?? 'No comments' }}</p>
         </div>
     
         <!-- Status -->
