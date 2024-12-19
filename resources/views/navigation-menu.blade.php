@@ -20,7 +20,7 @@
                     <div class="relative" x-data="{ open: false }">
                         <button 
                             @click="open = !open" 
-                            class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium leading-5 text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out"
+                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
                         >
                             {{ __('Package') }}
                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,9 +43,12 @@
                                 <x-dropdown-link href="{{ route('packages.index') }}">
                                     {{ __('Index') }}
                                 </x-dropdown-link>
+
+                                @can('create', \App\Models\Package::class)
                                 <x-dropdown-link href="{{ route('packages.create') }}">
                                     {{ __('Create') }}
                                 </x-dropdown-link>
+                                @endcan
                                 {{-- <x-dropdown-link href="{{ route('packages.edit') }}">
                                     {{ __('Edit') }}
                                 </x-dropdown-link> --}}

@@ -36,63 +36,7 @@
             @enderror
         </div>
     
-        <!-- Is Album Checkbox -->
-        <div class="mb-3">
-            <input type="checkbox" id="is_album" name="is_album" {{ old('is_album', $package->is_album) ? 'checked' : '' }}>
-            <label for="is_album">¿Es un álbum?</label>
-        </div>
-    
-        <!-- Album Details -->
-        <div id="album-fields" style="{{ old('is_album', $package->is_album) ? '' : 'display: none;' }}">
-            <!-- Album Title -->
-            <div class="mb-3">
-                <label for="album_title" class="form-label">Título del Álbum</label>
-                <input type="text" name="album_title" id="album_title" class="form-control" value="{{ old('album_title', $package->album_title) }}">
-                @error('album_title')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-    
-            <!-- Album Description -->
-            <div class="mb-3">
-                <label for="album_description" class="form-label">Descripción del Álbum</label>
-                <textarea name="album_description" id="album_description" class="form-control">{{ old('album_description', $package->album_description) }}</textarea>
-                @error('album_description')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-    
-            <!-- Release Date -->
-            <div class="mb-3">
-                <label for="release_date" class="form-label">Fecha de Lanzamiento</label>
-                <input type="date" name="release_date" id="release_date" class="form-control" value="{{ old('release_date', $package->release_date) }}">
-                @error('release_date')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-    
-            <!-- Album Cover Image -->
-            <div class="mb-3">
-                <label for="album_cover_image" class="form-label">Imagen de Portada</label>
-                <input type="file" name="album_cover_image" id="album_cover_image" class="form-control">
-                @error('album_cover_image')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-    
-            <!-- Genre -->
-            <div class="mb-3">
-                <label for="genre" class="form-label">Género</label>
-                <input type="text" name="genre" id="genre" class="form-control" value="{{ old('genre', $package->genre) }}">
-                @error('genre')
-                    <div class="text-danger">{{ $message }}</div>
-                @enderror
-            </div>
-        </div>
-    
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
-    
-    <script src="{{ asset('js/create-album-form.js') }}"></script>
 </x-app-layout>

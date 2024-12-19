@@ -25,12 +25,18 @@
                         <td>{{ $package->points }}</td>
                         <td>
                             <a href="{{ route('packages.show', $package->id) }}" class="btn btn-info btn-sm">Ver</a>
+                            
+                            @can('update', $package)
                             <a href="{{ route('packages.edit', $package->id) }}" class="btn btn-warning btn-sm">Editar</a>
+                            @endcan
+
+                           {{--  @can('delete', $package)
                             <form action="{{ route('packages.destroy', $package->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este paquete?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
                             </form>
+                            @endcan --}}
                         </td>
                     </tr>
                 @empty

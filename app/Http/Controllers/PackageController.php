@@ -22,7 +22,16 @@ class PackageController extends Controller
      */
     public function index()
     {
-        $packages = Package::paginate(10);
+        $user = auth()->user();
+
+        if ($user->can('viewAny', Package::class)) {
+            $packages = Package::paginate(10);
+        } else  {
+            $packages = Package::whereHas('users', function ($query) use ($user) {
+                $query->where('user_id', $user->id);
+            })->paginate(10);
+        }
+
         return  view("packages.index", compact("packages"));
     }
 

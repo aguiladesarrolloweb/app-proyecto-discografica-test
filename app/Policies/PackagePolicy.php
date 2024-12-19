@@ -2,18 +2,24 @@
 
 namespace App\Policies;
 
+use App\Enums\RoleEnum;
 use App\Models\Package;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
 class PackagePolicy
 {
+
+
     /**
      * Determine whether the user can view any models.
      */
     public function viewAny(User $user): bool
     {
-        return true;
+        $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
+        $roles_user = $user->roles->pluck('id')->toArray();
+        
+        return !empty(array_intersect($roles_user, $roles_admin));
     }
 
     /**
@@ -21,7 +27,9 @@ class PackagePolicy
      */
     public function view(User $user, Package $package): bool
     {
-        return true;
+        if ($this->viewAny($user)) return true;
+        
+        return in_array($user->id,$package->users->pluck('id')->toArray());
     }
 
     /**
@@ -29,7 +37,10 @@ class PackagePolicy
      */
     public function create(User $user): bool
     {
-        return true;
+        $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
+        $roles_user = $user->roles->pluck('id')->toArray();
+        
+        return !empty(array_intersect($roles_user, $roles_admin));
     }
 
     /**
@@ -37,7 +48,10 @@ class PackagePolicy
      */
     public function update(User $user, Package $package): bool
     {
-        return true;
+        $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
+        $roles_user = $user->roles->pluck('id')->toArray();
+        
+        return !empty(array_intersect($roles_user, $roles_admin));
     }
 
     /**
@@ -45,7 +59,10 @@ class PackagePolicy
      */
     public function delete(User $user, Package $package): bool
     {
-        return true;
+        $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
+        $roles_user = $user->roles->pluck('id')->toArray();
+        
+        return !empty(array_intersect($roles_user, $roles_admin));
     }
 
     /**

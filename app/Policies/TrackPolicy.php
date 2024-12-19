@@ -2,6 +2,7 @@
 
 namespace App\Policies;
 
+use App\Enums\RoleEnum;
 use App\Models\Track;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
@@ -21,7 +22,9 @@ class TrackPolicy
      */
     public function view(User $user, Track $track): bool
     {
-        //
+        if ($this->create($user)) return true;
+        
+        return (int) $user->id === (int) $track->user_id;
     }
 
     /**
@@ -29,7 +32,10 @@ class TrackPolicy
      */
     public function create(User $user): bool
     {
-        //
+        $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
+        $roles_user = $user->roles->pluck('id')->toArray();
+        
+        return !empty(array_intersect($roles_user, $roles_admin));
     }
 
     /**
@@ -37,7 +43,10 @@ class TrackPolicy
      */
     public function update(User $user, Track $track): bool
     {
-        //
+        $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
+        $roles_user = $user->roles->pluck('id')->toArray();
+        
+        return !empty(array_intersect($roles_user, $roles_admin));
     }
 
     /**
@@ -45,7 +54,10 @@ class TrackPolicy
      */
     public function delete(User $user, Track $track): bool
     {
-        //
+        $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
+        $roles_user = $user->roles->pluck('id')->toArray();
+        
+        return !empty(array_intersect($roles_user, $roles_admin));
     }
 
     /**
