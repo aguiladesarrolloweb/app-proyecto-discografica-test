@@ -5,3 +5,472 @@
 [x-cloak] {
     display: none;
 }
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Temporalmente comentamos Tailwind para usar CSS puro */
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* Estilos globales */
+
+
+body {
+    background-color: black;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 50;
+    padding: 50;
+}
+
+/* Utilidades de Layout */
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+
+
+.items-center {
+    align-items: center;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+/* Espaciado */
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mb-4 { margin-bottom: 1rem; }
+.ms-2 { margin-left: 0.5rem; }
+.ms-3 { margin-left: 0.75rem; }
+.ms-4 { margin-left: 1rem; }
+
+/* Tipografía */
+.text-sm { font-size: 0.875rem; }
+.text-xl { font-size: 1.25rem; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.leading-tight { line-height: 1.25; }
+
+/* Colores de texto */
+.text-gray-600 { color: var(--color-gray-600); }
+.text-gray-800 { color: var(--color-gray-800); }
+.text-gray-900 { color: var(--color-gray-900); }
+
+/* Inputs y Formularios */
+.block {
+    display: block;
+}
+
+.w-full {
+    width: 100%;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    background-color: #fff;
+}
+
+/* Botones */
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.button-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: #4338ca;
+}
+
+/* Utilidades adicionales */
+[x-cloak] {
+    display: none;
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+    .sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .sm\:pt-0 { padding-top: 0; }
+}
+
+@media (min-width: 1024px) {
+    .lg\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+}
+
+/* Contenedor de autenticación */
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.bg-gray-100 {
+    background-color: #121212; /* Fondo oscuro para el tema */
+}
+
+/* Card de autenticación */
+.sm\:max-w-md {
+    max-width: 400px;
+}
+
+.bg-white {
+    background-color: #1a1a1a !important; /* Fondo oscuro para la tarjeta */
+}
+
+.shadow-md {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sm\:rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.mt-6 {
+    margin-top: 1.5rem;
+}
+
+/* Inputs y Formularios */
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #fff !important;
+    border-radius: 0.375rem;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 2px rgba(255, 10, 147, 0.2);
+}
+
+/* Labels */
+label {
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Botón personalizado */
+.inline-flex {
+    display: inline-flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.bg-gray-800 {
+    background-color: var(--color-primary) !important;
+}
+
+button[type="submit"] {
+    min-width: 100px !important;  /* Reducido de 120px */
+    height: 36px !important;      /* Reducido de 40px */
+    padding: 0.4rem 1.2rem !important; /* Reducido de 0.5rem 1.5rem */
+    font-size: 0.8rem !important;    /* Reducido de 0.875rem */
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border: none !important;
+    border-radius: 0.375rem !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-primary-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 6px rgba(255, 10, 147, 0.2) !important;
+}
+button[type="submit"]:active {
+    transform: translateY(0) !important;
+    background-color: var(--color-primary-dark) !important;
+}
+
+/* Asegurarnos que el contenedor del botón no limite el tamaño */
+.justify-end {
+    justify-content: flex-end;
+    width: 100%;
+}
+:root {
+    --color-primary: #FF0A93;
+    --color-primary-dark: #D9087D; /* Versión más oscura para hover */
+    --color-gray-100: #f3f4f6;
+    --color-gray-600: #4b5563;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+}
+
+/* Enlaces */
+a.underline {
+    color: #fff !important;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+a.underline:hover {
+    color: var(--color-primary) !important;
+    text-decoration: underline;
+}
+
+/* Estilos del Dashboard Hero */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    padding: 0 1rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: #fff;
+}
+
+.hero-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.mb-16 {
+    margin-bottom: 3rem; /* Ajusta según sea necesario */
+}
+
+.titulo-grande {
+    font-size: 35px; /* Ajusta el tamaño según sea necesario */
+}
+.texto-pequeño {
+    font-size: 14px; /* Ajusta el tamaño según sea necesario */
+}
+
+
+.hero-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(255, 10, 147, 0.3);
+}
+
+.bg-white {
+    background-color: #000 !important; /* Cambiar a fondo negro */
+}
+
+.text-center {
+    text-align: center; /* Centra el texto horizontalmente */
+}
+
+
+/* Navegación del Dashboard */
+.dashboard-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    padding: 0.5rem 0;
+    z-index: 10;
+    height: 74px; /* Altura fija para coincidir con el área roja */
+    display: flex;
+    align-items: center;
+    margin-top: 20px; /* Ajusta este valor según la distancia deseada */
+}
+
+
+.nav-container {
+    width: 100%;
+    max-width: 1200px; /* Reducido para ajustarse mejor al área */
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    flex-shrink: 0;
+    margin-right: 2rem;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.nav-menu li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.25rem 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.nav-link:hover {
+    color: var(--color-primary);
+    transform: translateY(-1px);
+}
+
+/* Media queries para responsividad */
+@media (min-width: 1024px) {
+    .nav-container {
+        padding: 0 2rem;
+    }
+    
+    .nav-menu {
+        gap: 2rem;
+    }
+    
+    .nav-link {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .nav-container {
+        padding: 0 2rem;
+    }
+}
+
+.form-control {
+    width: 100%; /* Esto hará que todos los inputs ocupen el ancho completo */
+}
+
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre tarjetas */
+    background-image: url('../resources/assets/fondo_dasboard.png'); /* Asegúrate de que la ruta sea correcta */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+ 
+
+/* Esto son estilos de las card */
+.card {
+    background: rgba(255, 255, 255, 0.53);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Ancho fijo */
+    height: 150px; /* Altura fija para hacerla cuadrada */
+    padding: 20px;
+    text-align: center;
+    overflow: hidden; /* Para evitar que el contenido se desborde */
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.mt-8 {
+    margin-top: 10rem; /* Ajusta el tamaño según sea necesario */
+}
+
+
+
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Este es para darle estilo a la lista de paquetes */
+
+

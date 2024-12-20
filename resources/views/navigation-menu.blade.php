@@ -44,7 +44,7 @@
                                     {{ __('Index') }}
                                 </x-dropdown-link>
 
-                                @can('create', \App\Models\Package::class)
+                                @can('viewAny', \App\Models\Package::class)
                                 <x-dropdown-link href="{{ route('packages.create') }}">
                                     {{ __('Create') }}
                                 </x-dropdown-link>

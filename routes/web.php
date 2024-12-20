@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\MercadoPagoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -19,4 +20,9 @@ Route::middleware([
      foreach (glob(__DIR__ . '/modules/*.php') as $routeFile) {
         require_once $routeFile;
     }
+
+    // RUTAS DE MERCADO PAGO
+    Route::post('/create-preference', [MercadoPagoController::class, 'createPaymentPreference']);
+    Route::get('/mercadopago/success', [MercadoPagoController::class, 'success'])->name('mercadopago.success');
+    Route::get('/mercadopago/failed', [MercadoPagoController::class, 'failed'])->name('mercadopago.failed');
 });
