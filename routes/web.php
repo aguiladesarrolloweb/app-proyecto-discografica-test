@@ -4,6 +4,8 @@ use App\Http\Controllers\MercadoPagoController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+
+    
     return view('welcome');
 });
 
@@ -13,7 +15,8 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        $publicKey = config('services.mercadopago.public_key');
+        return view('dashboard',compact('publicKey'));
     })->name('dashboard');
 
      /* ROTES MODULES CARPETA */
@@ -22,7 +25,7 @@ Route::middleware([
     }
 
     // RUTAS DE MERCADO PAGO
-    Route::post('/create-preference', [MercadoPagoController::class, 'createPaymentPreference']);
+    Route::post('/create-preference', [MercadoPagoController::class, 'createPaymentPreference'])->name('mercadopago.createPreference');
     Route::get('/mercadopago/success', [MercadoPagoController::class, 'success'])->name('mercadopago.success');
     Route::get('/mercadopago/failed', [MercadoPagoController::class, 'failed'])->name('mercadopago.failed');
 });

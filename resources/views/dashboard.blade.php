@@ -124,7 +124,7 @@ window.closeModal = function () {
 };
 
             // Inicializar Mercado Pago
-            const mp = new MercadoPago("APP_USR-fb222e12-9761-40c4-98ff-5a119ce3ed95");
+            const mp = new MercadoPago('{{$publicKey}}');
 
             //console.log("{{ env('MERCADO_PAGO_PUBLIC_KEY') }}");
 
@@ -143,8 +143,9 @@ window.closeModal = function () {
 
                 console.log('Datos del pedido:', orderData);
 
+                const createPreferenceUrl = "{{ route('mercadopago.createPreference') }}";
                 // SOLICITUD AL SEDVIDOR PARA CREAR UNA PREFERENCIA DE PAGO
-                fetch('/create-preference', {
+                fetch(createPreferenceUrl, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

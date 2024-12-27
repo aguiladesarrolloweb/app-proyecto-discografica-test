@@ -18,6 +18,7 @@ class PackageService
 
     public function createPackage(array $data)
     {
+        dd($data);
         $user = Auth::user();
         $now = new DateTime();
         
@@ -26,7 +27,7 @@ class PackageService
         {
             DB::beginTransaction();
             $package = Package::create([
-                'package_name' => $data['package_name'],
+                'package_name' => $data['package_name'], //pack-idtypepacke-format
                 'format' => $data['format'],
                 'songs_limit' => $data['songs_limit'],
                 'price' => 0,
@@ -41,22 +42,6 @@ class PackageService
                 'purchase_date' => $now->format('Y-m-d H:i:s.u'), 
             ]);
 
-            if (isset($data['is_album'])) 
-            {
-                $album = Album::create([
-                    'album_title' => $data['album_title'],
-                    'album_description' => $data['album_description'] ?? NULL,
-                    'release_date' => $data['release_date'] ,
-                    'album_cover_image' => $data['album_cover_image'] ?? NULL,
-                    'genre' => $data['genre'],
-                ]);
-
-                $package->albums()->attach($album->id, [
-                    'packageable_type' => Album::class,
-                    'created_at' => Carbon::now(),
-                    'updated_at' => Carbon::now(),
-                ]);
-            }
 
             DB::commit();
             return 0;

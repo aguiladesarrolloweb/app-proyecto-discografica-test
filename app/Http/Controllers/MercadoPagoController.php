@@ -8,6 +8,7 @@ use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
 use MercadoPago\Exceptions\MPApiException;
 use Exception;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class MercadoPagoController extends Controller
@@ -46,9 +47,12 @@ class MercadoPagoController extends Controller
         try {
             $preference = $client->create($requestData);
 
+            $request->session()->put('package_id', $this->package_id);
+
             return response()->json([
                 'id' => $preference->id,
                 'init_point' => $preference->init_point, // Este es el enlace para redirigir al usuario al pago
+                "id_pack" => $this->package_id, 
             ]);
         } catch (MPApiException $error) {
             return response()->json([
@@ -95,7 +99,6 @@ class MercadoPagoController extends Controller
             "external_reference" => "1234567890", // Puedes usar algún identificador único aquí
             "expires" => false,
             "auto_return" => 'approved', // Redirige automáticamente después de una aprobación
-            "id_pack" =>  $this->package_id, // Redirige automáticamente después de una aprobación
         ];
 
         return $request;
@@ -103,6 +106,7 @@ class MercadoPagoController extends Controller
 
     public function success(Request $request)
     {
+        $package_id = $request->session()->get('package_id');
         // CAPTURAR LOS DATOS DE LA RESPUESTA DE MERCADO PAGO
         $paymentId = $request->query('payment_id');
         $status = $request->query('status');
@@ -110,7 +114,10 @@ class MercadoPagoController extends Controller
 
         // VERIFICAR EL ESTADO DEL PAGO
         if ($status === 'approved') {
-            return redirect(route('packages.create'))->with('success', 'Pago realizado con éxito. ID de pago: ' . $paymentId);
+            return view('payment.auto-submit', [
+                'package_id' => $package_id
+            ]);
+
         }
 
       
