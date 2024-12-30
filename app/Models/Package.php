@@ -105,9 +105,11 @@ class Package extends Model
      */
     public static function getPackage($id)
     {
+        $tracks = self::getTracks($id);
         return collect([
             'albums' => self::getAlbums($id),
-            'tracks' => self::getTracks($id),
+            'tracks' => $tracks,
+            'count_tracks' => count($tracks),
             'users' => self::getUsers($id)
         ]);
     }
@@ -119,7 +121,7 @@ class Package extends Model
             t.final_file, t.comments, t.status, t.file_format, t.current_version, t.limit_version,
             t.created_at,t.updated_at 
             from tracks t
-            inner join packageables p on t.id= p.packageable_id and p.packageable_type = 'App\Models\Track'
+            inner join packageables p on t.id= p.packageable_id and p.packageable_type = 'App\\\\Models\\\\Track'
             where p.package_id = $id");
     }
 

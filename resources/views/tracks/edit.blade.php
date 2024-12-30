@@ -1,9 +1,11 @@
 <x-app-layout>
-    <h2>Track: {{ $track->track_name }}</h2>
+    <h2>Track: {{ $track->title }}</h2>
     <div>Genre: {{ $track->genre }}</div>
     <div>Duration:{{ $track->duration }}</div>
     <div>Creado: {{ $track->created_at }}</div>
+    @if ($track->created_at != $track->updated_at)
     <div>Modificado: {{ $track->updated_at }}</div>
+    @endif
 
     <form action="{{ route('tracks.update') }}" method="POST" enctype="multipart/form-data">
 
@@ -29,31 +31,29 @@
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
-    
-        <!-- Completion Date -->
+
         <div class="mb-3">
-            <label for="completion_date" class="form-label">Completion Date</label>
-            <input type="datetime-local" id="completion_date" name="completion_date" class="form-control" value="{{ old('completion_date', optional($track->completion_date)->format('Y-m-d\TH:i')) }}">
-            @error('completion_date')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
+            <a href="https://duckduckgo.com" target="_blank" rel="noopener noreferrer">Acá iria el enlace para subir los archivos</a>
         </div>
-    
-        <!-- Final File -->
-        <div class="mb-3">
-            <label for="final_file" class="form-label">Final File</label>
-            <input type="file" id="final_file" name="final_file" class="form-control">
-            <small>Current file: {{ $track->final_file }}</small>
-            @error('final_file')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
-    
+
         <!-- Comments -->
         <div class="mb-3">
             <label for="comments" class="form-label">Comments</label>
             <textarea id="comments" name="comments" class="form-control" rows="3">{{ old('comments', $track->comments) }}</textarea>
             @error('comments')
+                <div class="text-danger">{{ $message }}</div>
+            @enderror
+        </div>
+
+
+
+        @can('updateAdmin',App\Models\Track::class)
+    
+        <!-- Final File -->
+        <div class="mb-3">
+            <label for="final_file" class="form-label">Final File</label>
+            <textarea id="final_file" name="final_file" class="form-control" rows="3">{{ old('final_file', $track->final_file) }}</textarea>
+            @error('final_file')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
@@ -71,23 +71,10 @@
             @enderror
         </div>
     
-        <!-- File Format -->
-        <div class="mb-3">
-            <label for="file_format" class="form-label">File Format</label>
-            <select id="file_format" name="file_format" class="form-select" required>
-                @foreach(\App\Enums\FileFormatEnum::options() as $format)
-                    <option value="{{ $format }}" @if(old('file_format', $track->file_format) == $format) selected @endif>{{ strtoupper($format) }}</option>
-                @endforeach
-            </select>
-            @error('file_format')
-                <div class="text-danger">{{ $message }}</div>
-            @enderror
-        </div>
-    
         <!-- Current Version -->
         <div class="mb-3">
             <label for="current_version" class="form-label">Current Version</label>
-            <input type="number" id="current_version" name="current_version" class="form-control" value="{{ old('current_version', $track->current_version) }}" required>
+            <input type="number" id="current_version" name="current_version" class="form-control" value="{{ old('current_version', $track->current_version) }}">
             @error('current_version')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
@@ -96,11 +83,14 @@
         <!-- Limit Version -->
         <div class="mb-3">
             <label for="limit_version" class="form-label">Limit Version</label>
-            <input type="number" id="limit_version" name="limit_version" class="form-control" value="{{ old('limit_version', $track->limit_version) }}" required>
+            <input type="number" id="limit_version" name="limit_version" class="form-control" value="{{ old('limit_version', $track->limit_version) }}">
             @error('limit_version')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
         </div>
+        @endcan
+    
+       
     
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Update Track</button>

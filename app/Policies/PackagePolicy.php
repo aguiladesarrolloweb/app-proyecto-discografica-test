@@ -80,4 +80,12 @@ class PackagePolicy
     {
         return true;
     }
+
+    
+    public function createTrack(User $user, Package $package): bool
+    {
+        if ($this->viewAny($user)) return true;
+        
+        return in_array($user->id,$package->users->pluck('id')->toArray());
+    }
 }

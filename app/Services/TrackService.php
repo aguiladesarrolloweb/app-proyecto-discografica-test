@@ -26,28 +26,28 @@ class TrackService
         /* DB::beginTransaction();
         try { */
             $package = Package::findOrFail($request->input('package_id'));
-        $file = $request->file('file');
+       /*  $file = $request->file('file');
         
         $tempPath = $file->getPathname();
         $metadata = $this->file_service->getAudioMetadata($tempPath);
 
         $track_name = Str::slug($request->input('title')).'-'.date("Y_m_d__H_i_s").'.' . $request->file->getClientOriginalExtension();
         $file_format = FileFormatEnum::getEnumFromFileExtension($metadata["format"]);
-
+ */
         // ingresa los datos en tracks
         $track = Track::create([
             'user_id' => $package->users()->first()->id,
             'package_id' => $package->id,
             'title' => preg_replace('/[^A-Za-z0-9áéíóúÁÉÍÓÚñÑ\s]/', '', $request->input('title')),
             'genre' => $request->input('genre'),
-            'duration' => $metadata["duration"],
+            /* 'duration' => $metadata["duration"],
             'original_file' => $track_name,
-            'final_file' => $track_name,
+            'final_file' => $track_name, */
             'comments' => $request->input('comments'),
-            'status' => FileStatusEnum::ACTIVE,
-            'file_format' => $file_format,
-            'current_version' => 1,
-            'limit_version' => 3,
+            'status' => FileStatusEnum::PROCESSING,
+            /* 'file_format' => $file_format, */
+            /* 'current_version' => 1,
+            'limit_version' => 3, */
         ]);
         
         // ingresa datos a packageables
@@ -58,9 +58,9 @@ class TrackService
         ]);
         // si el track pertenece a un album, se inserta a albums_tracks
         // subi el track en la carpeta
-        $this->file_service->upload($file,$package->package_path,$track_name);
+       /*  $this->file_service->upload($file,$package->package_path,$track_name); */
         // se inserta en el format_songs
-        $format_song = FormatSong::create([
+        /* $format_song = FormatSong::create([
             'file_name' => $track_name,
             'file_format' => $file_format,
             'file_path' => rtrim($package->package_path, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . $track_name,
@@ -72,7 +72,7 @@ class TrackService
         $format_song->formatSongsVersions()->attach($track->id, [
             'version' => 1,
             'created_at' => Carbon::now(),
-        ]);
+        ]); */
         /* } 
         catch (\Throwable $e) 
         {
@@ -86,19 +86,21 @@ class TrackService
     public function updateTrack($request)
     {
         $track = Track::findOrFail($request->input('id'));
-        $last_format_song = Track::getLastFormatSong($request->input('id'));
+        /* $last_format_song = Track::getLastFormatSong($request->input('id')); */
         $package = Package::findOrFail($track->package_id);
+        $date = ($request->input('status') === FileStatusEnum::COMPLETED->value) ? now() : null;
 
-        $duration = $track->duration;
+
+       /*  $duration = $track->duration;
         $file_format = $track->file_format;
         $size = $last_format_song->file_size;
-        $track_name = $track->final_file;
+        $track_name = $track->final_file; */
 
         /* DB::beginTransaction();
         
         try 
         { */
-            if ($request->file('final_file') !== NULL) 
+            /* if ($request->file('final_file') !== NULL) 
             {
                 $file = $request->file('final_file');
                 
@@ -129,10 +131,10 @@ class TrackService
                     'version' => $track->current_version,
                     'created_at' => Carbon::now(),
                 ]);
-            }
+            } */
     
             // asignar el file_name y path_name al track format
-            else
+           /*  else
             {
                 $extension_format = pathinfo($track_name, PATHINFO_EXTENSION);
                 $track_name = Str::slug($request->input('title')).'-'.date("Y_m_d__H_i_s").'.' . $extension_format;
@@ -142,7 +144,7 @@ class TrackService
                 $last_format_song->file_name = $track_name;
                 $last_format_song->file_path = $new_file_path;
                 $last_format_song->save();
-            }
+            } */
 /* 
             DB::commit();
             return 1;
@@ -155,17 +157,17 @@ class TrackService
         }
          */
 
-
          // ingresa los datos en tracks
          $track->update([
             'title' => preg_replace('/[^A-Za-z0-9áéíóúÁÉÍÓÚñÑ\s]/', '', $request->input('title')),
             'genre' => $request->input('genre'),
-            'duration' => $duration,
-            'final_file' => $track_name,
+            /* 'duration' => $duration, */
+            'final_file' => $request->input('final_file'),
             'comments' => $request->input('comments'),
             'status' => $request->input('status'),
-            'file_format' => $file_format,
-            'current_version' => $track->current_version + 1,
+            'completion_date' => $date,
+            /* 'file_format' => $file_format,
+            'current_version' => $track->current_version + 1, */
         ]);
     }
 }

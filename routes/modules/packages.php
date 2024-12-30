@@ -16,5 +16,5 @@ Route::controller(PackageController::class)->prefix('packages')->group( function
     
     Route::get('/{package}/files/create','fileUpload')->name('packages.files.create')->middleware('can:view,package');
 
-    Route::get('/{package}/tracks/create','trackCreate')->name('packages.tracks.create')->can('create', \App\Models\Track::class);
+    Route::get('/{package}/tracks/create','trackCreate')->name('packages.tracks.create')->can('create', [\App\Models\Track::class,'package']);
 });

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MercadoPagoController;
+use App\Models\PackageType;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,7 +17,8 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         $publicKey = config('services.mercadopago.public_key');
-        return view('dashboard',compact('publicKey'));
+        $packages_types = PackageType::all();
+        return view('dashboard',compact('publicKey',"packages_types"));
     })->name('dashboard');
 
      /* ROTES MODULES CARPETA */

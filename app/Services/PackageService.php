@@ -4,8 +4,10 @@ namespace App\Services;
 use App\Models\Package;
 use App\Models\Album;
 use App\Models\Packageable;
+use App\Models\PackageType;
 use App\Traits\ErrorLogTrait;
 use Carbon\Carbon;
+use Database\Seeders\PackagesTypeSeeder;
 use DateTime;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -18,21 +20,22 @@ class PackageService
 
     public function createPackage(array $data)
     {
-        dd($data);
+        $package_chosen = PackageType::find($data['package_id']);
         $user = Auth::user();
         $now = new DateTime();
         
+        $package_name_slug = Str::slug("$package_chosen->id-$package_chosen->package_name-$package_chosen->format");
        
         try 
         {
             DB::beginTransaction();
             $package = Package::create([
-                'package_name' => $data['package_name'], //pack-idtypepacke-format
-                'format' => $data['format'],
-                'songs_limit' => $data['songs_limit'],
-                'price' => 0,
-                'points' => 0,
-                'package_path' => $this->createPackageFolder($user['id'],$data['package_name']),
+                'package_name' => $package_name_slug, //pack-idtypepacke-format
+                'format' => $package_chosen->format,
+                'songs_limit' => $package_chosen->songs_limit,
+                'price' => $package_chosen->price,
+                'points' => $package_chosen->points,
+                'package_path' => $this->createPackageFolder($user['id'],$package_name_slug),
             ]);
 
             

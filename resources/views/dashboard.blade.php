@@ -35,35 +35,14 @@
             <div class="overflow-hidden sm:rounded-lg">
                 <!-- Contenedor con el Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 ">
-                    <!-- Tarjeta 1 img -->
-                    <div class="p-6 rounded-lg" onclick="openModal('Plan de 1 Canción', 49.00,1)">
-                        <img class="cursor-pointer"  src="{{ asset('imagenes/plan1.png') }}" alt="Plan 1">
+                    @forelse ($packages_types as $package)
+                    <div class="p-6 rounded-lg" onclick="openModal('Plan de canciones: {{$package->songs_limits}} tema/s', {{$package->price}},{{$package->id}})">
+                        <img class="cursor-pointer"  src="{{ asset("imagenes/plan$package->id.png") }}" alt="Plan 1">
                     </div>
-
-                    <!-- Tarjeta 2 img -->
-                    <div class="p-6 rounded-lg" onclick="openModal('Plan de 5 Canciones', 219.00,2)">
-                        <img class="cursor-pointer" src="{{ asset('imagenes/plan5.png') }}" alt="Plan 5">
-                    </div>
-
-                    <!-- Tarjeta 3 img -->
-                    <div class="p-6 rounded-lg" onclick="openModal('Plan de 10 Canciones', 399.00,3)">
-                        <img class="cursor-pointer" src="{{ asset('imagenes/plan10.png') }}" alt="Plan 10">
-                    </div>
-
-                    <!-- Tarjeta 4 img -->
-                    <div class="p-6 rounded-lg" onclick="openModal('Plan de 20 Canciones', 699.00,4)">
-                        <img class="cursor-pointer" src="{{ asset('imagenes/plan20.png') }}" alt="Plan 20">
-                    </div>
-
-                    <!-- Tarjeta 5 img -->
-                    <div class="p-6 rounded-lg" onclick="openModal('Plan de 50 Canciones', 1499.00,5)">
-                        <img class="cursor-pointer" src="{{ asset('imagenes/plan50.png') }}" alt="Plan 50">
-                    </div>
-
-                    <!-- Tarjeta 6 img -->
-                    <div class="p-6 rounded-lg" onclick="openModal('Plan de 100 Canciones', 2499.00,6)">
-                        <img class="cursor-pointer" src="{{ asset('imagenes/plan100.png') }}" alt="Plan 100">
-                    </div>
+                    @empty
+                        <div>No hay Paquetes Disponibles</div>
+                    @endforelse
+                    
 
                 </div>
             </div>
@@ -108,9 +87,8 @@
         </div>
 
         <script src="https://sdk.mercadopago.com/js/v2"></script>
-        <script>
-
-window.openModal = function (planName, planPrice, idPack) {
+        <script >
+            window.openModal = function (planName, planPrice, idPack) {
     window.selectedPlan = {
         name: planName,
         price: planPrice,
@@ -123,49 +101,52 @@ window.closeModal = function () {
     document.getElementById('paymentModal').classList.add('hidden');
 };
 
-            // Inicializar Mercado Pago
-            const mp = new MercadoPago('{{$publicKey}}');
+// Inicializar Mercado Pago
+const mp = new MercadoPago('{{$publicKey}}');
 
-            //console.log("{{ env('MERCADO_PAGO_PUBLIC_KEY') }}");
+// Evento para el botón de checkout
+document.getElementById('checkout-btn').addEventListener('click', function () {
+    // Crear el objeto 'orderData' solo con el plan seleccionado
+    const orderData = {
+        product: [
+            {
+                title: window.selectedPlan.name,
+                description: 'Descripción del producto', // HAY QUE AGREGAR DESCRIPCION DEL PRODUCTO
+                currency_id: "ARS",
+                quantity: 1,
+                id_pack: window.selectedPlan.idPackage,
+                unit_price: window.selectedPlan.price,
+            },
+        ],
+    };
 
-            document.getElementById('checkout-btn').addEventListener('click', function () {
-                // Crear el objeto 'orderData' solo con el plan seleccionado
-                const orderData = {
-                    product: [{
-                        title: window.selectedPlan.name,
-                        description: 'Descripción del producto', // HAY QUE AGREGAR DESCRIPCION DEL PRODUCTO ! ! !
-                        currency_id: "ARS",
-                        quantity: 1,
-                        id_pack: window.selectedPlan.idPackage,
-                        unit_price: window.selectedPlan.price
-                    }]
-                };
+    console.log('Datos del pedido:', orderData);
 
-                console.log('Datos del pedido:', orderData);
+    const createPreferenceUrl = "{{ route('mercadopago.createPreference') }}";
 
-                const createPreferenceUrl = "{{ route('mercadopago.createPreference') }}";
-                // SOLICITUD AL SEDVIDOR PARA CREAR UNA PREFERENCIA DE PAGO
-                fetch(createPreferenceUrl, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
-                    },
-                    body: JSON.stringify(orderData)
-                })
-                    .then(response => response.json())
-                    .then(preference => {
-                        if (preference.error) {
-                            throw new Error(preference.error);
-                        }
+    // Solicitud al servidor para crear una preferencia de pago
+    fetch(createPreferenceUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+        },
+        body: JSON.stringify(orderData),
+    })
+        .then(response => response.json())
+        .then(preference => {
+            if (preference.error) {
+                throw new Error(preference.error);
+            }
 
-                        // Redirigir al usuario a la URL de pago
-                        window.location.href = preference.init_point; 
-                    })
-                    .catch(error => console.error('Error al crear la preferencia:', error));
+            // Redirigir al usuario a la URL de pago
+            window.location.href = preference.init_point;
+        })
+        .catch(error => console.error('Error al crear la preferencia:', error));
+});
 
-            });
         </script>
+
     </div>
 
 
