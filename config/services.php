@@ -43,4 +43,10 @@ return [
 
     ],
 
+    'paypal' => [
+        'paypal_id' => env('PAYPAL_CLIENT_ID'),
+        'paypal_secret' => env('PAYPAL_SECRET'),
+        'mode' => env('PAYPAL_MODE', 'sandbox'),  // sandbox o live
+    ],
+
 ];
