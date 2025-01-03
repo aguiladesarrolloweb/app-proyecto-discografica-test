@@ -48,15 +48,15 @@ class PackageController extends Controller
      */
     public function store(StorePackageRequest $request)
     {
-        try 
-        {
+       /*  try 
+        { */
             $this->packageService->createPackage($request->toArray());
             return redirect()->route('packages.index')->banner('Paquete Creado Exitosamente');
-        } 
+       /*  } 
         catch (\Exception $e) 
         {
             return redirect()->route('packages.index')->dangerBanner('Error a la hora de la creación de paquete');
-        }
+        } */
     }
 
     /**

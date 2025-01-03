@@ -26,8 +26,8 @@ class PackageService
         
         $package_name_slug = Str::slug("$package_chosen->id-$package_chosen->package_name-$package_chosen->format");
        
-        try 
-        {
+        /* try 
+        { */
             DB::beginTransaction();
             $package = Package::create([
                 'package_name' => $package_name_slug, //pack-idtypepacke-format
@@ -48,14 +48,14 @@ class PackageService
 
             DB::commit();
             return 0;
-        } 
+       /*  } 
         catch (\Throwable $e) 
         {
             DB::rollBack();
 
             ErrorLogTrait::logError('packagelog', "Error al ejecutarse packageService@createPackage", $e);
             return -1;
-        }
+        } */
     }
 
     function createPackageFolder($user_id, $package_name)
@@ -70,7 +70,7 @@ class PackageService
         $folder_path = "{$user_id}-{$sanitized_package_name}-{$timestamp}";
 
         // Crear la carpeta
-        Storage::disk('public')->makeDirectory($folder_path);
+        /* Storage::disk('public')->makeDirectory($folder_path); */
 
         return $folder_path;
     }

@@ -57,7 +57,7 @@ document.getElementById('checkout-btn')?.addEventListener('click', function () {
         product: [{
             title: window.selectedPlan.name,
             description: 'Descripción del producto', // Agregar una descripción específica aquí
-            currency_id: "USD",
+            currency_id: "ARS",
             quantity: 1,
             unit_price: window.selectedPlan.price,
             id_pack: window.selectedPlan.idPackage

@@ -20,7 +20,7 @@
                         <td>{{ $packages->firstItem() + $loop->index }}</td>
                         <td>{{ $package->package_name }}</td>
                         <td>{{ $package->format }}</td>
-                        <td>/{{ $package->songs_limit }}</td>
+                        <td>{{$package->tracks->count()}}/{{ $package->songs_limit }}</td>
                         <td>${{ number_format($package->price, 2) }}</td>
                         <td>{{ $package->points }}</td>
                         <td>

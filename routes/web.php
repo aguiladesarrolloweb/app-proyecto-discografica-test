@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MercadoPagoController;
+use App\Http\Controllers\PaypalController;
 use App\Models\PackageType;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,12 @@ Route::middleware([
      foreach (glob(__DIR__ . '/modules/*.php') as $routeFile) {
         require_once $routeFile;
     }
+
+    
+
+    // RUTAS DE PAYPAL
+    Route::post('/api/orders', [PaypalController::class, 'createOrder']);
+    Route::post('/api/orders/{orderId}/capture', [PaypalController::class, 'capturePayment']);
 
     // RUTAS DE MERCADO PAGO
     Route::post('/create-preference', [MercadoPagoController::class, 'createPaymentPreference'])->name('mercadopago.createPreference');

@@ -24,7 +24,6 @@
         @endforelse
     </ul>
 
-    
     <div>Cantidad máxima: {{$package_data["count_tracks"]}}/{{$package->songs_limit}}</div>
 
     {{-- BOTON DE AGREGAR TRACKS --}}

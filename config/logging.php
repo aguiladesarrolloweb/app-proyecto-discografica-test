@@ -146,6 +146,12 @@ return [
             'days' => 180,
         ],
 
+        'paymentlog' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/payments.log'),
+            'days' => 180,
+        ],
+
     ],
 
 ];

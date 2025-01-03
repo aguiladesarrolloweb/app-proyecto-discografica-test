@@ -32,10 +32,6 @@
             @enderror
         </div>
 
-        <div class="mb-3">
-            <a href="https://duckduckgo.com" target="_blank" rel="noopener noreferrer">Acá iria el enlace para subir los archivos</a>
-        </div>
-
         <!-- Comments -->
         <div class="mb-3">
             <label for="comments" class="form-label">Comments</label>
@@ -89,16 +85,20 @@
             @enderror
         </div>
         @endcan
-    
-       
+
+        <script type="text/javascript">
+            var mf_dropbox_width = 100; // Cambia a tu preferencia
+            var mf_dropbox_id = "aae0b94881ea4781778e1e68b5aa07009d94f98dc6ea047c3502f905ad89a9f9";
+        </script>
+        <script type="text/javascript" src="https://www.mediafire.com/dropbox/dropbox.js"></script>
     
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Update Track</button>
     </form>
-    
-
 
 
 </div>
+
+
 
 </x-app-layout>

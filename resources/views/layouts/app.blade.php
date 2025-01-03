@@ -21,11 +21,23 @@
         <x-banner />
 
         <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+            <nav class="h-24 bg-white">
+                <div class="flex items-center justify-between h-full px-6">
+                    <!-- Logo a la izquierda -->
+                    <div class="flex items-center">
+                        <img src="{{ asset('imagenes/logo_dashboard.png') }}" alt="Logo" class="h-16">
+                    </div>
+
+                    <!-- Navigation Menu con usuario a la derecha -->
+                    <div class="flex items-center">
+                        @livewire('navigation-menu')
+                    </div>
+                </div>
+            </nav>
 
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white shadow">
+                <header class="bg-white">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
