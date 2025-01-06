@@ -1,9 +1,17 @@
 <x-app-layout>
+
+    <!-- package type -->
+    <div class="mb-3">
     <form action="{{ route('packages.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
     
-        <!-- package type -->
-        <div class="mb-3">
+        <x-select2 
+        :options="$users"
+        name="user_id_selected"
+        placeholder="Selecciona un Usuario"
+    />
+
+
             <label for="package_id" class="form-label">Tipo Paquete</label>
             <select name="package_id" id="package_id" class="form-control" required>
                 @foreach(\App\Models\PackageType::all() as $package)
@@ -20,5 +28,9 @@
         <!-- Submit Button -->
         <button type="submit" class="btn btn-primary">Guardar</button>
     </form>
+
+
+
+    
     
 </x-app-layout>

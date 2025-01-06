@@ -30,7 +30,7 @@ $preference = $client->create([
         "id" => "1234", // package->id
         "title" => "Dummy Title", // package->name
         "quantity" => 1,
-        "currency_id" => "ARS",
+        "currency_id" => "USD",
         "unit_price" => 2500
     )
 ),

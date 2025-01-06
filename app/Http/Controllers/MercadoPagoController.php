@@ -107,6 +107,9 @@ class MercadoPagoController extends Controller
     public function success(Request $request)
     {
         $package_id = $request->session()->get('package_id');
+
+        $package_id = $request->session()->get('package_id');
+        $request->session()->forget('package_id');
         // CAPTURAR LOS DATOS DE LA RESPUESTA DE MERCADO PAGO
         $paymentId = $request->query('payment_id');
         $status = $request->query('status');

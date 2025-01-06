@@ -1,7 +1,7 @@
 
 
 
-@vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/mercadopago.js', 'resources/js/paypal.js'])
+@vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/mercadopago.js', 'resources/js/stripe.js'])
 
 <script src="https://sdk.mercadopago.com/js/v2"></script>
 <script
@@ -82,18 +82,17 @@
                         </div> --}}
     
                         <!-- Stripe -->
-                        {{-- <div class="bg-gray-100 p-5 rounded-lg shadow-lg flex flex-col h-[350px]">
+                        <div class="bg-gray-100 p-5 rounded-lg shadow-lg flex flex-col h-[350px]">
                             <div class="mb-4">
                                 <img src="{{ asset('imagenes/stripe_modal.png') }}" alt="Stripe" class="w-24 h-24 object-contain mx-auto mb-2">
                                 <p class="mt-4 text-sm text-gray-600">Paga con Stripe de forma rápida y segura.</p>
-                                <p class="mt-6 text-base font-medium text-white price-text text-center">Accede a tu paquete en Dolby Atmos por solo $219.</p>
                             </div>
                             <div class="mt-auto mb-4 flex justify-center">
-                                <button
+                                <button id="checkout-btn-stripe"
                                     class="bg-[#FF0A93] text-white hover:text-[#C49CBC] active:text-[#FF0A93] px-6 py-2 rounded-md hover:bg-[#d4087c] transition duration-200">
                                     Pagar</button>
                             </div>
-                        </div> --}}
+                        </div>
                     </div>
     
                     <div class="mt-12">

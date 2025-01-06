@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MercadoPagoController;
 use App\Http\Controllers\PaypalController;
+use App\Http\Controllers\StripeController;
 use App\Models\PackageType;
 use Illuminate\Support\Facades\Route;
 
@@ -27,14 +28,25 @@ Route::middleware([
         require_once $routeFile;
     }
 
-    
+
+    // RUTAS DE STRIPE
+    Route::post('/create-preference-stripe', [StripeController::class, 'createPaymentPreference'])->name('stripe.createPreference');
+    Route::get('/success-stripe', [StripeController::class, 'success'])->name('stripe.success');
+    Route::get('/failed-stripe', [StripeController::class, 'failed'])->name('stripe.failed');
+
+
+    Route::get('/stripe', 'App\Http\Controllers\StripeController@checkout')->name('checkout');
+    Route::post('/test', 'App\Http\Controllers\StripeController@test');
+    Route::post('/live', 'App\Http\Controllers\StripeController@live');
+    Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('success');
 
     // RUTAS DE PAYPAL
-    Route::post('/api/orders', [PaypalController::class, 'createOrder']);
-    Route::post('/api/orders/{orderId}/capture', [PaypalController::class, 'capturePayment']);
+    Route::get('/paypal', [PaypalController::class, 'index'])->name('paypal.index');
+    Route::get('/paypal/create/{amount}', [PaypalController::class, 'create'])->name('paypal.create');
+    Route::post('/paypal/complete', [PaypalController::class, 'complete'])->name('paypal.complete');
 
     // RUTAS DE MERCADO PAGO
-    Route::post('/create-preference', [MercadoPagoController::class, 'createPaymentPreference'])->name('mercadopago.createPreference');
-    Route::get('/mercadopago/success', [MercadoPagoController::class, 'success'])->name('mercadopago.success');
-    Route::get('/mercadopago/failed', [MercadoPagoController::class, 'failed'])->name('mercadopago.failed');
+    Route::post('/create-preference-mercadopago', [MercadoPagoController::class, 'createPaymentPreference'])->name('mercadopago.createPreference');
+    Route::get('/success-mercadopago', [MercadoPagoController::class, 'success'])->name('mercadopago.success');
+    Route::get('/failed-mercadopago', [MercadoPagoController::class, 'failed'])->name('mercadopago.failed');
 });

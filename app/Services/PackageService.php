@@ -5,6 +5,7 @@ use App\Models\Package;
 use App\Models\Album;
 use App\Models\Packageable;
 use App\Models\PackageType;
+use App\Models\User;
 use App\Traits\ErrorLogTrait;
 use Carbon\Carbon;
 use Database\Seeders\PackagesTypeSeeder;
@@ -21,7 +22,7 @@ class PackageService
     public function createPackage(array $data)
     {
         $package_chosen = PackageType::find($data['package_id']);
-        $user = Auth::user();
+        $user = (isset($data['user_id_selected'])) ? User::find($data['user_id_selected']) : Auth::user();
         $now = new DateTime();
         
         $package_name_slug = Str::slug("$package_chosen->id-$package_chosen->package_name-$package_chosen->format");

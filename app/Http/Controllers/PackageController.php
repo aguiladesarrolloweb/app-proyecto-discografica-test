@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePackageRequest;
 use App\Http\Requests\UpdatePackageRequest;
 use App\Models\Package;
+use App\Models\User;
 use App\Services\PackageService;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -25,10 +26,10 @@ class PackageController extends Controller
         $user = auth()->user();
 
         if ($user->can('viewAny', Package::class)) {
-            $packages = Package::paginate(10);
+            $packages = Package::orderBy('created_at', 'desc')->paginate(10);
         } else  {
             $packages = Package::whereHas('users', function ($query) use ($user) {
-                $query->where('user_id', $user->id);
+                $query->where('user_id', $user->id)->orderBy('created_at', 'desc');
             })->paginate(10);
         }
 
@@ -40,7 +41,16 @@ class PackageController extends Controller
      */
     public function create()
     {
-        return  view("packages.create");
+        $users = User::whereNull('deleted_at')
+        ->get()
+        ->map(function($user) {
+            return [
+                'value' => $user->id,
+                'label' => $user->id . ' (' . $user->email . ')'  // Combinando id y email
+            ];
+        });
+
+        return  view("packages.create", compact("users"));
     }
 
     /**

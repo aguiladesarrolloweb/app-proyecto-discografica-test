@@ -10,7 +10,10 @@
                     <th>Formato</th>
                     <th>Límite de Canciones</th>
                     <th>Precio</th>
-                    <th>Puntos</th>
+                    @can('viewAny', \App\Models\Package::class)
+                    <th>User</th>
+                    @endcan
+                    <th>Creado</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -22,7 +25,10 @@
                         <td>{{ $package->format }}</td>
                         <td>{{$package->tracks->count()}}/{{ $package->songs_limit }}</td>
                         <td>${{ number_format($package->price, 2) }}</td>
-                        <td>{{ $package->points }}</td>
+                        @can('viewAny', \App\Models\Package::class)
+                        <td>{{ $package->users[0]->id }}: {{$package->users[0]->email}} ({{$package->users[0]->name}})</td>
+                        @endcan
+                        <td>{{ $package->created_at }}</td>
                         <td>
                             <a href="{{ route('packages.show', $package->id) }}" class="btn btn-info btn-sm">Ver</a>
                             

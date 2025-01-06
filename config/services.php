@@ -46,7 +46,9 @@ return [
     'paypal' => [
         'paypal_id' => env('PAYPAL_CLIENT_ID'),
         'paypal_secret' => env('PAYPAL_SECRET'),
+        'base_url' => env('PAYPAL_MODE', 'sandbox') === 'live' ? 'https://api-m.paypal.com': 'https://api-m.sandbox.paypal.com',  // sandbox o live
         'mode' => env('PAYPAL_MODE', 'sandbox'),  // sandbox o live
+        'currency' => env('PAYPAL_CURRENCY', 'USD'),  // sandbox o live
     ],
 
 ];

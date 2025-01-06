@@ -43,10 +43,8 @@ window.closeModal = function () {
 }
 
 // Inicializar Mercado Pago con tu clave pública
-const mp = new MercadoPago('{{$publicKey}}');
-
 // Agregar evento de clic al botón de pago
-document.getElementById('checkout-btn')?.addEventListener('click', function () {
+document.getElementById('checkout-btn-stripe')?.addEventListener('click', function () {
     if (!window.selectedPlan) {
         console.error('No se seleccionó ningún plan.');
         return;
@@ -57,7 +55,7 @@ document.getElementById('checkout-btn')?.addEventListener('click', function () {
         product: [{
             title: window.selectedPlan.name,
             description: 'Descripción del producto', // Agregar una descripción específica aquí
-            currency_id: "USD",
+            currency_id: "usd",
             quantity: 1,
             unit_price: window.selectedPlan.price,
             id_pack: window.selectedPlan.idPackage
@@ -68,30 +66,23 @@ document.getElementById('checkout-btn')?.addEventListener('click', function () {
     
 
     // Realizar la solicitud al servidor para crear una preferencia de pago
-    fetch('/create-preference-mercadopago', {
+    fetch('/create-preference-stripe', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('input[name="_token"]')?.value
+            'Accept': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
         },
         body: JSON.stringify(orderData)
     })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Error HTTP: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(preference => {
-            if (preference.error) {
-                throw new Error(preference.error);
-            }
-
-            // Redirigir al usuario a la URL de pago
-            window.location.href = preference.init_point;
-        })
-        .catch(error => console.error('Error al crear la preferencia:', error));
+    .then(response => response.json())
+    .then(data => {
+        if (data.url) {
+            window.location.href = data.url;
+        }
+    })
+    
 });
 
 // Verificar que el archivo JS se cargó correctamente
-console.log('El archivo mercadopago.js se cargó exitosamente');
+console.log('El archivo stripe.js se cargó exitosamente');
