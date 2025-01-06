@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Package;
+use App\Models\PackageType;
 use Illuminate\Http\Request;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
@@ -89,6 +90,18 @@ class MercadoPagoController extends Controller
             'success' => route('mercadopago.success'),
             'failure' => route('mercadopago.failed')
         ];
+
+        $package_selected = PackageType::find($items[0]["id_pack"]);
+
+        /* "quantity" => 1
+    "unit_price" => 49
+    "id_pack" => 1 */
+
+        $items[0]["id_pack"] = $package_selected->id;
+        $items[0]["unit_price"] = $package_selected->price;
+        $items[0]["quantity"] = 1;
+
+        dd($items);
 
         $request = [
             "items" => $items, // Los datos del producto que llegan del frontend

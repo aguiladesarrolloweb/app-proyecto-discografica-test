@@ -34,7 +34,7 @@
     
                 @forelse ($packages_types as $package) 
                         <div class="p-6 rounded-lg" onclick="openModal({{$package->id}},'Plan de canciones: {{$package->songs_limit}} tema/s', {{$package->price}})">
-                            <img class="cursor-pointer"  src="{{ asset("imagenes/plan$package->id.png") }}" alt="Plan 1">
+                            <img class="cursor-pointer"  src="{{ asset("imagenes/plan$package->id.png") }}" alt="Plan {{$package->id}}">
                         </div>
                         @empty
                             <div>No hay Paquetes Disponibles</div>

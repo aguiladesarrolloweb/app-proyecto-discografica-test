@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PackageType;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -30,6 +31,8 @@ class StripeController extends Controller
     public function createPaymentPreference(Request $request)
     {
         $this->package_id = $request->product[0]['id_pack'];
+
+        $package_selected = PackageType::find($$this->package_id);
         // Paso 1: Obtener la información del producto desde la solicitud JSON
         $product = $request->input('product'); // Aquí esperamos recibir un array con los datos del producto
 
@@ -49,9 +52,9 @@ class StripeController extends Controller
                         'product_data' => [
                             'name' => $request->product[0]['title'],
                         ],
-                        'unit_amount'  => (int) $request->product[0]['unit_price'] * 100,
+                        'unit_amount'  => (int) $package_selected->unit_price * 100,
                     ],
-                    'quantity'   => (int) $request->product[0]['quantity'],
+                    'quantity'   => (int) 1,
                 ],
             ],
             'mode'        => 'payment',
