@@ -1,7 +1,7 @@
 
 
 
-@vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/mercadopago.js', 'resources/js/stripe.js'])
+@vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <script src="https://sdk.mercadopago.com/js/v2"></script>
 <script

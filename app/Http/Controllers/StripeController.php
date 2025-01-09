@@ -32,7 +32,7 @@ class StripeController extends Controller
     {
         $this->package_id = $request->product[0]['id_pack'];
 
-        $package_selected = PackageType::find($$this->package_id);
+        $package_selected = PackageType::find($this->package_id);
         // Paso 1: Obtener la información del producto desde la solicitud JSON
         $product = $request->input('product'); // Aquí esperamos recibir un array con los datos del producto
 

@@ -98,7 +98,7 @@ class MercadoPagoController extends Controller
     "id_pack" => 1 */
 
         $items[0]["id_pack"] = $package_selected->id;
-        $items[0]["unit_price"] = $package_selected->price;
+        $items[0]["unit_price"] = (int) $package_selected->price;
         $items[0]["quantity"] = 1;
 
         $request = [
