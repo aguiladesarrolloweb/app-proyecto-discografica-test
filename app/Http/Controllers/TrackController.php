@@ -100,6 +100,8 @@ class TrackController extends Controller
      */
     public function destroy(Track $track)
     {
-        //
+        $package_id =$track->packages()->first()->id;
+        $this->track_service->deleteTrack($track);
+            return redirect()->route('packages.show',["package" =>$package_id])->banner('Track Borrado Exitosamente');
     }
 }

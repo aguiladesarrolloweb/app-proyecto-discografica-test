@@ -9,4 +9,11 @@ class PackageUser extends Model
 {
     /** @use HasFactory<\Database\Factories\PackageUserFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'package_id',
+        'user_id',
+        'purchase_date',
+        'points_earned',
+    ];
 }

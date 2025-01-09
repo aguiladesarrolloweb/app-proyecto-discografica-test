@@ -97,7 +97,8 @@ class User extends Authenticatable
 
     public function packages() : BelongsToMany
     {
-        return $this->belongsToMany(Package::class,"packages_users","user_id","package_id");
+        return $this->belongsToMany(Package::class,"packages_users","user_id","package_id")
+        ->withPivot('purchase_date', 'points_earned');
     }
     
     public function paymentTransactions() : HasMany

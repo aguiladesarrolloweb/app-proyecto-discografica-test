@@ -101,8 +101,6 @@ class MercadoPagoController extends Controller
         $items[0]["unit_price"] = $package_selected->price;
         $items[0]["quantity"] = 1;
 
-        dd($items);
-
         $request = [
             "items" => $items, // Los datos del producto que llegan del frontend
             "payer" => $payer, // Los datos del comprador

@@ -36,7 +36,7 @@ class PackageService
                 'songs_limit' => $package_chosen->songs_limit,
                 'price' => $package_chosen->price,
                 'points' => $package_chosen->points,
-                'package_path' => $this->createPackageFolder($user['id'],$package_name_slug),
+                /* 'package_path' => $this->createPackageFolder($user['id'],$package_name_slug), */
             ]);
 
             
@@ -120,5 +120,51 @@ class PackageService
             return -1;
         }
         
+    }
+
+    public function updatePackage(array $data)
+    {
+        $package = Package::find($data['package_id']);
+        $package_chosen = PackageType::find($data['package_type_id']);
+        $user = User::find($data['user_id_selected']);
+        $now = new DateTime();
+        
+        $package_name_slug = Str::slug("$package_chosen->id-$package_chosen->package_name-$package_chosen->format");
+       
+        /* try 
+        { */
+
+
+
+            DB::beginTransaction();
+            DB::table('packages_users')
+            ->where('package_id', $package->id)
+            ->where('user_id', $user['id'])
+            ->update([
+                'purchase_date' => now()->format('Y-m-d H:i:s'),
+                'points_earned' => 0,
+            ]);
+            $package->update([
+                'package_name' => $package_name_slug, //pack-idtypepacke-format
+                'format' => $package_chosen->format,
+                'songs_limit' => $package_chosen->songs_limit,
+                'price' => $package_chosen->price,
+                'points' => $package_chosen->points,
+                /* 'package_path' => $this->createPackageFolder($user['id'],$package_name_slug), */
+            ]);
+
+           
+
+
+            DB::commit();
+            return 0;
+       /*  } 
+        catch (\Throwable $e) 
+        {
+            DB::rollBack();
+
+            ErrorLogTrait::logError('packagelog', "Error al ejecutarse packageService@createPackage", $e);
+            return -1;
+        } */
     }
 }

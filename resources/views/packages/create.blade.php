@@ -9,7 +9,7 @@
         :options="$users"
         name="user_id_selected"
         placeholder="Selecciona un Usuario"
-    />
+        />
 
 
             <label for="package_id" class="form-label">Tipo Paquete</label>

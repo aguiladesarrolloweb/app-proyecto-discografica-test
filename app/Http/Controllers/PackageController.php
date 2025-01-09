@@ -74,11 +74,11 @@ class PackageController extends Controller
      */
     public function show(Package $package)
     {
-        $files = Package::getFiles($package);
-
+        /* $files = Package::getFiles($package);
+ */
         $package_data = Package::getPackage($package->id);
 
-        return view('packages.show', compact('files','package','package_data'));
+        return view('packages.show', compact('package','package_data'));
     }
 
     /**
@@ -86,7 +86,16 @@ class PackageController extends Controller
      */
     public function edit(Package $package)
     {
-        return view('packages.edit', compact('package'));
+        $users = User::whereNull('deleted_at')
+        ->get()
+        ->map(function($user) {
+            return [
+                'value' => $user->id,
+                'label' => $user->id . ' (' . $user->email . ')'  // Combinando id y email
+            ];
+        });
+
+        return view('packages.edit', compact('package','users'));
     }
 
     /**
@@ -94,7 +103,8 @@ class PackageController extends Controller
      */
     public function update(UpdatePackageRequest $request, Package $package)
     {
-        //
+        $this->packageService->updatePackage($request->toArray());
+            return redirect()->route('packages.show', ['package' => $package->id])->banner('Paquete Editado Exitosamente');
     }
 
     /**

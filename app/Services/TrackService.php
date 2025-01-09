@@ -83,6 +83,13 @@ class TrackService
         
     }
 
+    public function deleteTrack(Track $track)
+    {
+        $track->packages()->detach();
+        $track->delete();
+        return 0;
+    }
+
     public function updateTrack($request)
     {
         $track = Track::findOrFail($request->input('id'));

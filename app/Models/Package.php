@@ -58,7 +58,8 @@ class Package extends Model
 
     public function users() : BelongsToMany
     {
-        return $this->belongsToMany(User::class,"packages_users","package_id","user_id");
+        return $this->belongsToMany(User::class,"packages_users","package_id","user_id")
+        ->withPivot('purchase_date', 'points_earned');
     }
    
 

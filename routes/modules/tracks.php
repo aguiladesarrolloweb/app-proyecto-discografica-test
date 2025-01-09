@@ -11,4 +11,5 @@ Route::controller(TrackController::class)->prefix('tracks')->group( function () 
     Route::get('/{track}/edit','edit')->name('tracks.edit');
     Route::put('/update','update')->name('tracks.update');
     Route::delete('/delete/{filePath}','delete')->name('tracks.delete');
+    Route::delete('/destroy/{track}','destroy')->name('tracks.destroy');
 });

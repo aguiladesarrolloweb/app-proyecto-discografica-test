@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('songs_limit');
             $table->decimal('price', 10, 2);
             $table->integer('points')->default(0);
-            $table->string('package_path');
+            $table->string('package_path')->nullable();
             $table->timestamps();
         });
     }
