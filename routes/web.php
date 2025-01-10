@@ -4,6 +4,8 @@ use App\Http\Controllers\MercadoPagoController;
 use App\Http\Controllers\PaypalController;
 use App\Http\Controllers\StripeController;
 use App\Models\PackageType;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,6 +29,17 @@ Route::middleware([
      foreach (glob(__DIR__ . '/modules/*.php') as $routeFile) {
         require_once $routeFile;
     }
+
+    Route::post('lang/change', function (Request $request) {
+        $lang = $request->lang;
+    
+        if (in_array($lang, ['es', 'en', 'pt'])) {
+            session(['locale' => $lang]);
+            App::setLocale($lang);
+        }
+    
+        return redirect()->back();
+    })->name('lang.change');
 
 
     // RUTAS DE STRIPE

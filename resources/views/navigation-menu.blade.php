@@ -16,6 +16,44 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    <!-- User Dropdown -->
+                    <div class="relative" x-data="{ open: false }">
+                        <button 
+                            @click="open = !open" 
+                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
+                        >
+                            {{ __('Users') }}
+                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <div 
+                            x-show="open" 
+                            @click.away="open = false"
+                            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg origin-top-left left-0"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 scale-95"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100"
+                            x-transition:leave-end="opacity-0 scale-95"
+                        >
+                            <div class="rounded-md shadow-xs bg-white">
+                                <x-dropdown-link href="{{ route('users.index') }}">
+                                    {{ __('Index') }}
+                                </x-dropdown-link>
+
+                                @can('viewAny', \App\Models\User::class)
+                                <x-dropdown-link href="{{ route('users.create') }}">
+                                    {{ __('Create') }}
+                                </x-dropdown-link>
+                                @endcan
+                                
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- Package Dropdown -->
                     <div class="relative" x-data="{ open: false }">
                         <button 
@@ -191,9 +229,16 @@
                 <x-responsive-nav-link href="{{ route('packages.create') }}" :active="request()->routeIs('packages.create')">
                     {{ __('Create Package') }}
                 </x-responsive-nav-link>
-                {{-- <x-responsive-nav-link href="{{ route('packages.edit') }}" :active="request()->routeIs('packages.edit')">
-                    {{ __('Edit Package') }}
-                </x-responsive-nav-link> --}}
+            </div>
+
+            <!-- Responsive Package Links -->
+            <div class="space-y-1">
+                <x-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
+                    {{ __('User Index') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link href="{{ route('users.create') }}" :active="request()->routeIs('users.create')">
+                    {{ __('Create User') }}
+                </x-responsive-nav-link>
             </div>
         </div>
 

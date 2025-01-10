@@ -1,6 +1,3 @@
-
-
-
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <script src="https://sdk.mercadopago.com/js/v2"></script>
@@ -52,13 +49,17 @@
                 <div class="bg-white rounded-lg p-6 pt-3 w-3/4 max-w-4xl min-h-[400px]">
                     <h3 class="text-2xl font-semibold text-white mb-4 mt-4 text-center font-montserrat">Métodos de pagos disponibles</h3>
     
-                    <div class="grid grid-cols-3 gap-8 mt-4">
+                    <div class="grid grid-cols-2 gap-8 mt-4">
+
                         <!-- Mercado Pago -->
                         <div class="bg-gray-100 p-5 pt-2 rounded-lg shadow-lg flex flex-col h-[350px]">
                             <div class="flex-grow mb-4">
-                                <img src="{{ asset('imagenes/mercado_pago_modal.png') }}" alt="Mercado Pago" class="w-24 h-24 object-contain mx-auto mb-2">
-                                <p class="mt-4 text-sm text-gray-600">Paga con Mercado Pago de forma rápida y segura.</p>
+                                <img src="{{ asset('imagenes/mercado_pago_modal.png') }}" alt="Mercado Pago" class="w-32 h-32 object-contain mx-auto mb-2">
+                                <p class="mt-4 text-base text-white text-center">Paga con Mercado Pago de forma rápida y segura.</p>
+                             
+
                                 {{-- <p class="mt-6 text-base font-medium text-white price-text text-center">Accede a tu paquete en Dolby Atmos por solo $219.</p> --}}
+                            
                             </div>
                             <div class="mb-6 flex justify-center">
                                 <button id="checkout-btn"
@@ -82,17 +83,18 @@
                         </div> --}}
     
                         <!-- Stripe -->
-                        <div class="bg-gray-100 p-5 rounded-lg shadow-lg flex flex-col h-[350px]">
-                            <div class="mb-4">
-                                <img src="{{ asset('imagenes/stripe_modal.png') }}" alt="Stripe" class="w-24 h-24 object-contain mx-auto mb-2">
-                                <p class="mt-4 text-sm text-gray-600">Paga con Stripe de forma rápida y segura.</p>
+                        <div class="bg-gray-100 p-5 pt-2 rounded-lg shadow-lg flex flex-col h-[350px]">
+                            <div class="flex-grow mb-4">
+                                <img src="{{ asset('imagenes/stripe_modal.png') }}" alt="Stripe" class="w-32 h-32 object-contain mx-auto mb-2">
+                                <p class="mt-4 text-base text-white text-center">Paga con Stripe de forma rápida y segura.</p>
                             </div>
-                            <div class="mt-auto mb-4 flex justify-center">
+                            <div class="mb-6 flex justify-center">
                                 <button id="checkout-btn-stripe"
                                     class="bg-[#FF0A93] text-white hover:text-[#C49CBC] active:text-[#FF0A93] px-6 py-2 rounded-md hover:bg-[#d4087c] transition duration-200">
                                     Pagar</button>
                             </div>
                         </div>
+
                     </div>
     
                     <div class="mt-12">

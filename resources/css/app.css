@@ -652,42 +652,67 @@ body.modal-open {
 #paymentModal .modal-content {
     position: relative;
     background-color: #1a1a1a;
-    margin: 20% auto;
-    padding: 10px;
+    margin: 15% auto;
+    padding: 20px;
     border-radius: 8px;
-    width: 300px; /* Reducido significativamente */
-    height: 100px; /* Altura más pequeña */
+    width: 800px;     /* Aumentado para acomodar las dos opciones lado a lado */
+    height: 400px;    /* Altura fija para hacer el modal más cuadrado */
     display: flex;
+    flex-direction: column;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#paymentModal .close-modal {
-    position: absolute;
-    right: 8px;
-    top: 3px;
-    font-size: 18px;
-    color: #ffffff;
-    cursor: pointer;
-    z-index: 1;
+#paymentModal .modal-body {
+    display: flex;
+    flex-direction: row;  /* Cambiado a row para poner las opciones lado a lado */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    padding: 20px;
 }
 
-#paymentModal .modal-body {
-    padding: 0 10px;
+#paymentModal .payment-option {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    width: 45%;      /* Para que queden dos columnas con espacio entre ellas */
 }
 
 #paymentModal .modal-text {
-    font-size: 0.9rem;
-    margin-right: 10px;
+    font-size: 1rem;
+    text-align: center;
+    margin: 15px 0;
+    color: #9ca3af;   /* Color gris claro para el texto */
 }
 
 #paymentModal .modal-payment-button {
-    flex-shrink: 0;
-    transform: scale(0.8); /* Hace el botón de pago un poco más pequeño */
+    margin-top: 20px;
+}
+
+#paymentModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+#paymentModal .close-button {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #FF0A93;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 0 0 8px 8px;
+    margin-top: auto;
 }
 
 

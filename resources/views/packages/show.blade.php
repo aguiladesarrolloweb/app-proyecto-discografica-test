@@ -52,13 +52,13 @@
                     @endcan
                     @can('update', $track)
                     <a href="{{ route('tracks.edit', $track->id) }}" class="btn btn-info btn-sm">Editar</a>
-                    <form action="{{ route('tracks.destroy', $track->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este track?');">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
-                    </form>
                     @endcan
                     {{-- TODO:: ELIMINAR FILE  --}}
+                {{-- <form action="{{ route('track.destroy', $track->id) }}" method="POST" class="d-inline" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este track?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+                </form> --}}
                 </ul>
             </li>
         @empty
