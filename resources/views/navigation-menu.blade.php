@@ -17,6 +17,7 @@
                     </x-nav-link>
 
                     <!-- User Dropdown -->
+                    @can('viewAny', \App\Models\User::class)
                     <div class="relative" x-data="{ open: false }">
                         <button 
                             @click="open = !open" 
@@ -44,15 +45,14 @@
                                     {{ __('Index') }}
                                 </x-dropdown-link>
 
-                                @can('viewAny', \App\Models\User::class)
                                 <x-dropdown-link href="{{ route('users.create') }}">
                                     {{ __('Create') }}
                                 </x-dropdown-link>
-                                @endcan
                                 
                             </div>
                         </div>
                     </div>
+                    @endcan
 
                     <!-- Package Dropdown -->
                     <div class="relative" x-data="{ open: false }">
@@ -226,12 +226,15 @@
                 <x-responsive-nav-link href="{{ route('packages.index') }}" :active="request()->routeIs('packages.index')">
                     {{ __('Package Index') }}
                 </x-responsive-nav-link>
+                @can('viewAny', \App\Models\Package::class)
                 <x-responsive-nav-link href="{{ route('packages.create') }}" :active="request()->routeIs('packages.create')">
                     {{ __('Create Package') }}
                 </x-responsive-nav-link>
+                @endcan
             </div>
 
             <!-- Responsive Package Links -->
+            @can('viewAny', \App\Models\User::class)
             <div class="space-y-1">
                 <x-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">
                     {{ __('User Index') }}
@@ -240,6 +243,7 @@
                     {{ __('Create User') }}
                 </x-responsive-nav-link>
             </div>
+            @endcan
         </div>
 
         <!-- Responsive Settings Options -->

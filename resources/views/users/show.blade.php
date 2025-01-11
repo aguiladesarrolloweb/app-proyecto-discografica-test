@@ -17,13 +17,6 @@
             <li><strong>Productor:</strong> {{ $user->producer_name ?? 'No proporcionado' }}</li>
             <li><strong>Manager:</strong> {{ $user->manager_name ?? 'No proporcionado' }}</li>
             <li><strong>AR:</strong> {{ $user->ar_name ?? 'No proporcionado' }}</li>
-            <li><strong>Foto de Perfil:</strong> 
-                @if ($user->profile_photo_path)
-                    <img src="{{ asset('storage/' . $user->profile_photo_path) }}" alt="Foto de perfil" width="150">
-                @else
-                    No proporcionada
-                @endif
-            </li>
             <li><strong>Fecha de Creación:</strong> {{ $user->created_at->format('Y-m-d H:i') }}</li>
             <li><strong>Última Actualización:</strong> {{ $user->updated_at->format('Y-m-d H:i') }}</li>
         </ul>
@@ -50,7 +43,9 @@
             <ul>
                 @foreach ($user->packages as $package)
                 
-                    <li>Paquete de {{ $package->songs_limit }} cancion/es en formato {{ $package->format }}:  ${{ $package->price }} - creado {{ $package->created_at }} </li>
+                    <li>Paquete de {{ $package->songs_limit }} cancion/es en formato {{ $package->format }}:  ${{ $package->price }} - creado {{ $package->created_at }} 
+                        <a href="{{ route('packages.show', $package->id) }}">Ver</a>
+                    </li>
                 @endforeach
             </ul>
         @endif

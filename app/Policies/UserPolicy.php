@@ -14,7 +14,7 @@ class UserPolicy
     {
         $roles_admin = [RoleEnum::SUPER_ADMIN->value, RoleEnum::ADMIN->value];
         $roles_user = $user->roles->pluck('id')->toArray();
-        
+
         return !empty(array_intersect($roles_user, $roles_admin));
     }
 

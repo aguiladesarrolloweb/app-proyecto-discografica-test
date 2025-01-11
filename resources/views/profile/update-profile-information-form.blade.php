@@ -83,6 +83,90 @@
                 @endif
             @endif
         </div>
+
+        <!-- Address -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="address" value="{{ __('Address') }}" class="text-white" />
+            <x-input id="address" type="text" class="mt-1 block w-full text-white" 
+                wire:model="state.address" autocomplete="address" />
+            <x-input-error for="address" class="mt-2" />
+        </div>
+
+        <!-- Country -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="country" value="{{ __('Country') }}" class="text-white" />
+            <x-input id="country" type="text" class="mt-1 block w-full text-white" 
+                wire:model="state.country" autocomplete="country" />
+            <x-input-error for="country" class="mt-2" />
+        </div>
+
+        <!-- Post Code -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="post_code" value="{{ __('Post Code') }}" class="text-white" />
+            <x-input id="post_code" type="text" class="mt-1 block w-full text-white" 
+                wire:model="state.post_code" autocomplete="post_code" />
+            <x-input-error for="post_code" class="mt-2" />
+        </div>
+
+        <!-- Category -->
+        <div class="col-span-6 sm:col-span-4">
+            <label for="category" class="text-white">{{ __('Category') }}</label>
+            <select name="category" id="category" class="mt-1 block w-full bg-gray-800 text-white" 
+                wire:model="state.category">
+                <option value="">{{ __('Select a category') }}</option>
+                @foreach (\App\Enums\CategoryEnum::options() as $option)
+                    <option value="{{ $option }}">{{ ucfirst($option) }}</option>
+                @endforeach
+            </select>
+            <x-input-error for="category" class="mt-2" />
+        </div>
+
+        <!-- Record Label -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="record_label" value="{{ __('Record Label') }}" class="text-white" />
+            <x-input id="record_label" type="text" class="mt-1 block w-full text-white" 
+                wire:model="state.record_label" autocomplete="record_label" />
+            <x-input-error for="record_label" class="mt-2" />
+        </div>
+
+        <!-- Is Independent Artist -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="is_independent_artist" value="{{ __('Is Independent Artist') }}" class="text-white" />
+            <x-input 
+                id="is_independent_artist" 
+                type="checkbox" 
+                class="mt-1 block text-white" 
+                wire:model="state.is_independent_artist"
+                :checked="$this->user->is_independent_artist === 1"
+            />
+            <x-input-error for="is_independent_artist" class="mt-2" />
+        </div>
+
+        <!-- Producer Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="producer_name" value="{{ __('Producer Name') }}" class="text-white" />
+            <x-input id="producer_name" type="text" class="mt-1 block w-full text-white" 
+                wire:model="state.producer_name" autocomplete="producer_name" />
+            <x-input-error for="producer_name" class="mt-2" />
+        </div>
+
+        <!-- Manager Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="manager_name" value="{{ __('Manager Name') }}" class="text-white" />
+            <x-input id="manager_name" type="text" class="mt-1 block w-full text-white" 
+                wire:model="state.manager_name" autocomplete="manager_name" />
+            <x-input-error for="manager_name" class="mt-2" />
+        </div>
+
+        <!-- AR Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-label for="ar_name" value="{{ __('AR Name') }}" class="text-white" />
+            <x-input id="ar_name" type="text" class="mt-1 block w-full text-white" 
+                wire:model="state.ar_name" autocomplete="ar_name" />
+            <x-input-error for="ar_name" class="mt-2" />
+        </div>
+
+
     </x-slot>
 
     <x-slot name="actions">

@@ -21,6 +21,15 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
             'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
+            'address' => ['nullable', 'string', 'max:255'],
+            'country' => ['nullable', 'string', 'max:255'],
+            'post_code' => ['nullable', 'string', 'max:20'],
+            'category' => ['nullable', Rule::in(\App\Enums\CategoryEnum::options())],
+            'record_label' => ['nullable', 'string', 'max:255'],
+            'is_independent_artist' => ['nullable', 'boolean'],
+            'producer_name' => ['nullable', 'string', 'max:255'],
+            'manager_name' => ['nullable', 'string', 'max:255'],
+            'ar_name' => ['nullable', 'string', 'max:255'],
         ])->validateWithBag('updateProfileInformation');
 
         if (isset($input['photo'])) {
@@ -34,6 +43,15 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             $user->forceFill([
                 'name' => $input['name'],
                 'email' => $input['email'],
+                'address' => $input['address'],
+                'country' => $input['country'],
+                'post_code' => $input['post_code'],
+                'category' => $input['category'],
+                'record_label' => $input['record_label'],
+                'is_independent_artist' => $input['is_independent_artist'],
+                'producer_name' => $input['producer_name'],
+                'manager_name' => $input['manager_name'],
+                'ar_name' => $input['ar_name'],
             ])->save();
         }
     }
@@ -49,6 +67,15 @@ class UpdateUserProfileInformation implements UpdatesUserProfileInformation
             'name' => $input['name'],
             'email' => $input['email'],
             'email_verified_at' => null,
+            'address' => $input['address'],
+            'country' => $input['country'],
+            'post_code' => $input['post_code'],
+            'category' => $input['category'],
+            'record_label' => $input['record_label'],
+            'is_independent_artist' => $input['is_independent_artist'],
+            'producer_name' => $input['producer_name'],
+            'manager_name' => $input['manager_name'],
+            'ar_name' => $input['ar_name'],
         ])->save();
 
         $user->sendEmailVerificationNotification();
