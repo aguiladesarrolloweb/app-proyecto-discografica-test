@@ -7,6 +7,7 @@ use App\Models\PackageType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
 
@@ -31,12 +32,12 @@ Route::middleware([
         require_once $routeFile;
     }
 
-    Route::post('lang/change', function (Request $request) {
-        $lang = $request->lang;
+    Route::get('lang/{locale}', function (Request $request) {
+        $lang = $request->locale;
     
         if (in_array($lang, ['es', 'en', 'pt'])) {
-            session(['locale' => $lang]);
             App::setLocale($lang);
+            Session::put("locale",$lang);
         }
     
         return redirect()->back();

@@ -130,6 +130,21 @@
                     </div>
                     @endcan
 
+
+                    {{-- LOCALE --}}
+                    <div class="relative">
+                        <ul class="flex space-x-4 px-4 py-2 rounded shadow">
+                            <li>
+                                <a href="{{ route('lang.change', ['locale' => 'es']) }}" class="text-gray-700 hover:text-blue-600 font-medium">ES</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('lang.change', ['locale' => 'en']) }}" class="text-gray-700 hover:text-blue-600 font-medium">EN</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('lang.change', ['locale' => 'pt']) }}" class="text-gray-700 hover:text-blue-600 font-medium">PT</a>
+                            </li>
+                        </ul>
+                    </div>
                     
                 </div>
             </div>
