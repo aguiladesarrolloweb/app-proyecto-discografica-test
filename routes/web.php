@@ -24,6 +24,7 @@ Route::middleware([
         $packages_types = PackageType::all();
         return view('dashboard',compact('publicKey',"packages_types"));
     })->name('dashboard');
+    
 
      /* ROTES MODULES CARPETA */
      foreach (glob(__DIR__ . '/modules/*.php') as $routeFile) {

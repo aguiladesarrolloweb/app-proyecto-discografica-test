@@ -116,4 +116,27 @@ class User extends Authenticatable
     {
         return $this->hasMany(Track::class,"user_id","id");
     }
+
+
+    public function conversations()
+    {
+        return $this->belongsToMany(Conversation::class,"conversations_users")->withPivot('joined_at');
+    }
+
+    /**
+     * Los mensajes enviados por el usuario.
+     */
+    public function messages()
+    {
+        return $this->hasMany(Message::class, 'sender_id');
+    }
+
+    /**
+     * Los mensajes leídos por el usuario.
+     */
+    public function messageReads()
+    {
+        return $this->hasMany(MessagesRead::class,"messages_reads");
+    }
+
 }
