@@ -1,3 +1,6 @@
+
+
+
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,11 +19,49 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
+                    <!-- User Dropdown -->
+                    @can('viewAny', \App\Models\User::class)
+                    <div class="relative" x-data="{ open: false }">
+                        <button 
+                            @click="open = !open" 
+                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
+                        >
+                            {{ __('Users') }}
+                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+
+                        <div 
+                            x-show="open" 
+                            @click.away="open = false"
+                            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg origin-top-left left-0"
+                            x-transition:enter="transition ease-out duration-200"
+                            x-transition:enter-start="opacity-0 scale-95"
+                            x-transition:enter-end="opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75"
+                            x-transition:leave-start="opacity-100 scale-100"
+                            x-transition:leave-end="opacity-0 scale-95"
+                        >
+                            <div class="rounded-md shadow-xs bg-white">
+                                <x-dropdown-link href="{{ route('users.index') }}">
+                                    {{ __('Index') }}
+                                </x-dropdown-link>
+
+                                <x-dropdown-link href="{{ route('users.create') }}">
+                                    {{ __('Create') }}
+                                </x-dropdown-link>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    @endcan
+
                     <!-- Conversations Dropdown -->
                     <div class="relative" x-data="{ open: false }">
                         <button 
                             @click="open = !open" 
-                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
+                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
                         >
                             {{ __('Conversations') }}
                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,11 +95,12 @@
                         </div>
                     </div>
 
+
                     <!-- Package Dropdown -->
                     <div class="relative" x-data="{ open: false }">
                         <button 
                             @click="open = !open" 
-                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
+                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
                         >
                             {{ __('Package') }}
                             <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -87,66 +129,28 @@
                                     {{ __('Create') }}
                                 </x-dropdown-link>
                                 @endcan
-                                
+                                {{-- <x-dropdown-link href="{{ route('packages.edit') }}">
+                                    {{ __('Edit') }}
+                                </x-dropdown-link> --}}
                             </div>
                         </div>
                     </div>
-
-                    <!-- User Dropdown -->
-                    @can('viewAny', \App\Models\User::class)
-                    <div class="relative" x-data="{ open: false }">
-                        <button 
-                            @click="open = !open" 
-                            class="mt-4 inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150"
-                        >
-                            {{ __('Users') }}
-                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                            </svg>
-                        </button>
-
-                        <div 
-                            x-show="open" 
-                            @click.away="open = false"
-                            class="absolute z-50 mt-2 w-48 rounded-md shadow-lg origin-top-left left-0"
-                            x-transition:enter="transition ease-out duration-200"
-                            x-transition:enter-start="opacity-0 scale-95"
-                            x-transition:enter-end="opacity-100 scale-100"
-                            x-transition:leave="transition ease-in duration-75"
-                            x-transition:leave-start="opacity-100 scale-100"
-                            x-transition:leave-end="opacity-0 scale-95"
-                        >
-                            <div class="rounded-md shadow-xs bg-white">
-                                <x-dropdown-link href="{{ route('users.index') }}">
-                                    {{ __('Index') }}
-                                </x-dropdown-link>
-
-                                <x-dropdown-link href="{{ route('users.create') }}">
-                                    {{ __('Create') }}
-                                </x-dropdown-link>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    @endcan
-
-
-                    {{-- LOCALE --}}
-                    <div class="relative">
-                        <ul class="flex space-x-4 px-4 py-2 rounded shadow">
-                            <li>
-                                <a href="{{ route('lang.change', ['locale' => 'es']) }}" class="text-gray-700 hover:text-blue-600 font-medium">ES</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('lang.change', ['locale' => 'en']) }}" class="text-gray-700 hover:text-blue-600 font-medium">EN</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('lang.change', ['locale' => 'pt']) }}" class="text-gray-700 hover:text-blue-600 font-medium">PT</a>
-                            </li>
-                        </ul>
-                    </div>
-                    
                 </div>
+            </div>
+
+            {{-- LOCALE --}}
+            <div class="relative">
+                <ul class="flex space-x-4 px-4 py-2 rounded shadow ">
+                    <li>
+                        <a href="{{ route('lang.change', ['locale' => 'es']) }}" class="text-white hover:text-blue-600 font-medium">ES</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('lang.change', ['locale' => 'en']) }}" class="text-white hover:text-blue-600 font-medium">EN</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('lang.change', ['locale' => 'pt']) }}" class="text-white hover:text-blue-600 font-medium">PT</a>
+                    </li>
+                </ul>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -212,7 +216,7 @@
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
                                         {{ Auth::user()->name }}
 
                                         <svg class="ms-2 -me-0.5 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -285,6 +289,7 @@
                 </x-responsive-nav-link>
                 @endcan
             </div>
+
             <!-- Responsive Package Links -->
             <div class="space-y-1">
                 <x-responsive-nav-link href="{{ route('packages.index') }}" :active="request()->routeIs('packages.index')">
@@ -297,7 +302,7 @@
                 @endcan
             </div>
 
-            <!-- Responsive Users Links -->
+            <!-- Responsive User Links -->
             @can('viewAny', \App\Models\User::class)
             <div class="space-y-1">
                 <x-responsive-nav-link href="{{ route('users.index') }}" :active="request()->routeIs('users.index')">

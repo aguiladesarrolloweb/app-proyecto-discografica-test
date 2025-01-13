@@ -25,7 +25,7 @@ class ConversationPolicy
 
         $conversation = Conversation::find($conversation);
         
-        return in_array($user->id,$conversation->participants->pluck('user_id')->toArray());
+        return in_array($user->id,$conversation->participants->pluck('id')->toArray());
     }
 
     /**
@@ -66,8 +66,9 @@ class ConversationPolicy
     {
 
         $conversation = Conversation::find($conversation);
+
         
-        return in_array($user->id,$conversation->participants->pluck('user_id')->toArray());
+        return in_array($user->id,$conversation->participants->pluck('id')->toArray());
     }
 
 }

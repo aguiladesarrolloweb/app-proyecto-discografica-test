@@ -167,7 +167,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 </ul></div>
             <div class="jkit-nav-identity-panel">
                 <div class="jkit-nav-site-title"><a href="https://en.immersound.xyz" class="jkit-nav-logo" aria-label="Home Link"><img decoding="async" width="995" height="632" src="https://en.immersound.xyz/wp-content/uploads/2022/12/iso.svg" class="attachment-full size-full" alt="" /></a></div>
-                <button aria-label="close-menu" class="jkit-close-menu hover-gradient"><span><i aria-hidden="true" class="fa fa-times"></i></span></button>
+                <button aria-label="close-menu" class="jkit-close-menu hover-gradient"><span><i aria-hidden="true" class="fas fa-times"></i></span></button>
             </div>
         </div>
         <div class="jkit-overlay"></div></div>				</div>
@@ -181,7 +181,11 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 				</div>
 					</div>
 		</div>
-				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2bcd614" data-id="2bcd614" data-element_type="column">
+
+
+
+		<!------------------------------------ Botones de login y registro ----------------------------------->
+			<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-2bcd614" data-id="2bcd614" data-element_type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
 						<div class="elementor-element elementor-element-43b1f5e elementor-widget__width-initial elementor-widget elementor-widget-text-editor" data-id="43b1f5e" data-element_type="widget" data-widget_type="text-editor.default">
 				<div class="elementor-widget-container">
@@ -262,114 +266,9 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 		</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-bfc61b7 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="bfc61b7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-6cbf294" data-id="6cbf294" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-7e461d2 elementor-widget elementor-widget-text-editor" data-id="7e461d2" data-element_type="widget" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p style="text-align: center;">Descubre cómo llevar tu música al siguiente nivel. Explora nuestros planes y encuentra el sonido perfecto para tus canciones&#8230;</p>								</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-da70dfc elementor-hidden-tablet elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="da70dfc" data-element_type="section" id="PLANES" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:6.1,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateX_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateX_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:6,&quot;sizes&quot;:[]},&quot;background_motion_fx_opacity_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_opacity_level&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:9,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_translateX_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_opacity_direction&quot;:&quot;out-in&quot;,&quot;background_motion_fx_opacity_range&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:20,&quot;end&quot;:80}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-a9af593" data-id="a9af593" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap">
-							</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-cfd0137" data-id="cfd0137" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-f012292 elementor-widget elementor-widget-image" data-id="f012292" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="240" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/1-1.png" class="elementor-animation-grow attachment-large size-large wp-image-3825" alt="" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-f11a199 elementor-widget elementor-widget-image" data-id="f11a199" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-4.png" class="elementor-animation-grow attachment-large size-large wp-image-4191" alt="" />															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-79cbb59" data-id="79cbb59" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-4d0cbe3 elementor-widget elementor-widget-image" data-id="4d0cbe3" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="240" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-2.png" class="elementor-animation-grow attachment-large size-large wp-image-4189" alt="" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-47e3fef elementor-widget elementor-widget-image" data-id="47e3fef" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-5.png" class="elementor-animation-grow attachment-large size-large wp-image-4192" alt="" />															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-9650d14" data-id="9650d14" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-c6c20a9 elementor-widget elementor-widget-image" data-id="c6c20a9" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-3.png" class="elementor-animation-grow attachment-large size-large wp-image-4190" alt="" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-fdb4704 elementor-widget elementor-widget-image" data-id="fdb4704" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-2.png" class="elementor-animation-grow attachment-large size-large wp-image-4193" alt="" />															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-87e1e26" data-id="87e1e26" data-element_type="column">
-			<div class="elementor-widget-wrap">
-							</div>
-		</div>
-					</div>
-		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-518cec5 elementor-hidden-desktop elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="518cec5" data-element_type="section" id="PLANES" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;background_motion_fx_motion_fx_scrolling&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateY_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:6.1,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateX_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_translateX_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:6,&quot;sizes&quot;:[]},&quot;background_motion_fx_opacity_effect&quot;:&quot;yes&quot;,&quot;background_motion_fx_opacity_level&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:9,&quot;sizes&quot;:[]},&quot;background_motion_fx_translateY_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_translateX_affectedRange&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:0,&quot;end&quot;:100}},&quot;background_motion_fx_opacity_direction&quot;:&quot;out-in&quot;,&quot;background_motion_fx_opacity_range&quot;:{&quot;unit&quot;:&quot;%&quot;,&quot;size&quot;:&quot;&quot;,&quot;sizes&quot;:{&quot;start&quot;:20,&quot;end&quot;:80}},&quot;background_motion_fx_devices&quot;:[&quot;desktop&quot;,&quot;tablet&quot;,&quot;mobile&quot;]}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-4721304" data-id="4721304" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap">
-							</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-0def4a3" data-id="0def4a3" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-9531c7b elementor-widget elementor-widget-image" data-id="9531c7b" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="240" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/1-1.png" class="elementor-animation-grow attachment-large size-large wp-image-3825" alt="" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-8818cc2 elementor-widget elementor-widget-image" data-id="8818cc2" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="240" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-2.png" class="elementor-animation-grow attachment-large size-large wp-image-4189" alt="" />															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-f6a743d" data-id="f6a743d" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-1b07b6c elementor-widget elementor-widget-image" data-id="1b07b6c" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-3.png" class="elementor-animation-grow attachment-large size-large wp-image-4190" alt="" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-69cdc70 elementor-widget elementor-widget-image" data-id="69cdc70" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-4.png" class="elementor-animation-grow attachment-large size-large wp-image-4191" alt="" />															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-8d5fddf" data-id="8d5fddf" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-93c35bb elementor-widget elementor-widget-image" data-id="93c35bb" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-1-5.png" class="elementor-animation-grow attachment-large size-large wp-image-4192" alt="" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-a9c3084 elementor-widget elementor-widget-image" data-id="a9c3084" data-element_type="widget" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="241" height="275" src="https://en.immersound.xyz/wp-content/uploads/2024/12/immersound-2.png" class="elementor-animation-grow attachment-large size-large wp-image-4193" alt="" />															</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-c95657e" data-id="c95657e" data-element_type="column">
-			<div class="elementor-widget-wrap">
-							</div>
-		</div>
-					</div>
-		</section>
+				
+		
+				
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-8b4b051 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="8b4b051" data-element_type="section" id="PROCESO" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
 						<div class="elementor-container elementor-column-gap-default">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-9f2c658" data-id="9f2c658" data-element_type="column">
@@ -384,11 +283,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 				<div class="elementor-element elementor-element-6e5c00f elementor-align-center elementor-widget elementor-widget-button" data-id="6e5c00f" data-element_type="widget" data-widget_type="button.default">
 				<div class="elementor-widget-container">
 									<div class="elementor-button-wrapper">
-					<a class="elementor-button elementor-button-link elementor-size-sm" href="#">
-						<span class="elementor-button-content-wrapper">
-									<span class="elementor-button-text">EMPEZAR </span>
-					</span>
-					</a>
+					
 				</div>
 								</div>
 				</div>
@@ -410,42 +305,10 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 					</div>
 		</div>
 					</div>
-					<section class="bg-white py-12">
-						<div class="container mx-auto px-6">
-							<div class="flex space-x-8">
-								<!-- Step 1 -->
-								<div class="flex flex-col items-center">
-									<div class="text-4xl text-blue-500 mb-4">
-										<i class="fa-solid fa-user-check"></i>
-									</div>
-									<p class="text-center text-lg">1. Regístrate como usuario.</p>
-								</div>
-								<!-- Step 2 -->
-								<div class="flex flex-col items-center">
-									<div class="text-4xl text-blue-500 mb-4">
-										<i class="fa fa-list"></i>
-									</div>
-									<p class="text-center text-lg">2. Escoge el paquete de canciones.</p>
-								</div>
-								<!-- Step 3 -->
-								<div class="flex flex-col items-center">
-									<div class="text-4xl text-blue-500 mb-4">
-										<i class="fa fa-file-medical"></i>
-									</div>
-									<p class="text-center text-lg">3. Carga el material (Stereo Master + Stems).</p>
-								</div>
-								<!-- Step 4 -->
-								<div class="flex flex-col items-center">
-									<div class="text-4xl text-blue-500 mb-4">
-										<i class="fa fa-music"></i>
-									</div>
-									<p class="text-center text-lg">4. Descarga tu MASTER DOLBY ATMOS.</p>
-								</div>
-							</div>
-						</div>
-					</section>
-					
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-00c5c44 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="00c5c44" data-element_type="section">
+		</section>
+
+		
+		<section class="elementor-section elementor-top-section elementor-element elementor-element-00c5c44 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="00c5c44" data-element_type="section">
 						<div class="elementor-container elementor-column-gap-default">
 					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-29229c0" data-id="29229c0" data-element_type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
@@ -512,78 +375,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 		</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-48af802 elementor-section-content-top elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="48af802" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
-							<div class="elementor-background-overlay"></div>
-						<div class="elementor-shape elementor-shape-top" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
-</svg>		</div>
-				<div class="elementor-shape elementor-shape-bottom" data-negative="false">
-			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
-	<path class="elementor-shape-fill" d="M0,6V0h1000v100L0,6z"/>
-</svg>		</div>
-					<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c522c88" data-id="c522c88" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-dea2e4a animated-slow elementor-invisible elementor-widget elementor-widget-heading" data-id="dea2e4a" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;zoomIn&quot;}" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h2 class="elementor-heading-title elementor-size-default">Nuestros trabajos</h2>				</div>
-				</div>
-				<div class="elementor-element elementor-element-60c854f animated-slow elementor-invisible elementor-widget elementor-widget-text-editor" data-id="60c854f" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="text-editor.default">
-				<div class="elementor-widget-container">
-									<p>Tus producciones pueden llegar a las plataformas musicales más importantes con la pureza de Dolby ATMOS Music.</p>								</div>
-				</div>
-				<section class="elementor-section elementor-inner-section elementor-element elementor-element-1661255 elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="1661255" data-element_type="section">
-						<div class="elementor-container elementor-column-gap-no">
-					<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-28712cb" data-id="28712cb" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-					<div class="elementor-background-overlay"></div>
-						<div class="elementor-element elementor-element-0d78010 elementor-invisible elementor-widget elementor-widget-image" data-id="0d78010" data-element_type="widget" data-settings="{&quot;motion_fx_motion_fx_mouse&quot;:&quot;yes&quot;,&quot;motion_fx_tilt_effect&quot;:&quot;yes&quot;,&quot;motion_fx_tilt_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:7,&quot;sizes&quot;:[]},&quot;_animation&quot;:&quot;fadeIn&quot;}" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-																<a href="https://tidal.com/playlist/be15716e-7b1d-4844-8f94-34491fd0c0b2">
-							<img loading="lazy" decoding="async" width="500" height="500" src="https://en.immersound.xyz/wp-content/uploads/2023/01/tidal.jpg" class="attachment-large size-large wp-image-761" alt="" srcset="https://en.immersound.xyz/wp-content/uploads/2023/01/tidal.jpg 500w, https://en.immersound.xyz/wp-content/uploads/2023/01/tidal-300x300.jpg 300w, https://en.immersound.xyz/wp-content/uploads/2023/01/tidal-150x150.jpg 150w" sizes="(max-width: 500px) 100vw, 500px" />								</a>
-															</div>
-				</div>
-				<div class="elementor-element elementor-element-6363441 elementor-widget elementor-widget-heading" data-id="6363441" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default"><a href="https://tidal.com/playlist/be15716e-7b1d-4844-8f94-34491fd0c0b2" target="_blank">Tidal</a></h5>				</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-dd4cb9f" data-id="dd4cb9f" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-					<div class="elementor-background-overlay"></div>
-						<div class="elementor-element elementor-element-dc76d11 elementor-widget elementor-widget-image" data-id="dc76d11" data-element_type="widget" data-settings="{&quot;motion_fx_motion_fx_mouse&quot;:&quot;yes&quot;,&quot;motion_fx_tilt_effect&quot;:&quot;yes&quot;,&quot;motion_fx_tilt_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:7,&quot;sizes&quot;:[]}}" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-															<img loading="lazy" decoding="async" width="500" height="500" src="https://en.immersound.xyz/wp-content/uploads/2023/01/apple-music.jpg" class="attachment-large size-large wp-image-781" alt="" srcset="https://en.immersound.xyz/wp-content/uploads/2023/01/apple-music.jpg 500w, https://en.immersound.xyz/wp-content/uploads/2023/01/apple-music-300x300.jpg 300w, https://en.immersound.xyz/wp-content/uploads/2023/01/apple-music-150x150.jpg 150w" sizes="(max-width: 500px) 100vw, 500px" />															</div>
-				</div>
-				<div class="elementor-element elementor-element-9b9c507 elementor-widget elementor-widget-heading" data-id="9b9c507" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default"><a href="https://music.apple.com/ar/playlist/immersound-spatial-audio-songs/pl.u-NpXmzaVI4AaXbM7?ls" target="_blank">Apple Music</a></h5>				</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-c0c90e4" data-id="c0c90e4" data-element_type="column" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-			<div class="elementor-widget-wrap elementor-element-populated">
-					<div class="elementor-background-overlay"></div>
-						<div class="elementor-element elementor-element-8087b68 elementor-widget elementor-widget-image" data-id="8087b68" data-element_type="widget" data-settings="{&quot;motion_fx_motion_fx_mouse&quot;:&quot;yes&quot;,&quot;motion_fx_tilt_effect&quot;:&quot;yes&quot;,&quot;motion_fx_tilt_speed&quot;:{&quot;unit&quot;:&quot;px&quot;,&quot;size&quot;:7,&quot;sizes&quot;:[]}}" data-widget_type="image.default">
-				<div class="elementor-widget-container">
-																<a href="https://music.amazon.com/user-playlists/7a0645bf0ffb4c05893e35786d1da9d7a0r0?ref=dm_sh_WDcNZdOqKJHxFBnsb1WIH5I1A">
-							<img loading="lazy" decoding="async" width="500" height="500" src="https://en.immersound.xyz/wp-content/uploads/2023/01/Amazon-1.jpg" class="attachment-large size-large wp-image-841" alt="" srcset="https://en.immersound.xyz/wp-content/uploads/2023/01/Amazon-1.jpg 500w, https://en.immersound.xyz/wp-content/uploads/2023/01/Amazon-1-300x300.jpg 300w, https://en.immersound.xyz/wp-content/uploads/2023/01/Amazon-1-150x150.jpg 150w" sizes="(max-width: 500px) 100vw, 500px" />								</a>
-															</div>
-				</div>
-				<div class="elementor-element elementor-element-b2c08ab elementor-widget elementor-widget-heading" data-id="b2c08ab" data-element_type="widget" data-widget_type="heading.default">
-				<div class="elementor-widget-container">
-					<h5 class="elementor-heading-title elementor-size-default"><a href="https://music.amazon.com/user-playlists/7a0645bf0ffb4c05893e35786d1da9d7a0r0?ref=dm_sh_WDcNZdOqKJHxFBnsb1WIH5I1A" target="_blank">Amazon Music</a></h5>				</div>
-				</div>
-					</div>
-		</div>
-					</div>
-		</section>
-					</div>
-		</div>
-					</div>
-		</section>
+				
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-9428294 elementor-section-content-top elementor-hidden-desktop elementor-hidden-tablet elementor-hidden-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="9428294" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;tilt&quot;,&quot;shape_divider_bottom&quot;:&quot;tilt&quot;}">
 							<div class="elementor-background-overlay"></div>
 						<div class="elementor-shape elementor-shape-top" data-negative="false">
@@ -784,75 +576,17 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 				</div>
 				<div class="elementor-element elementor-element-67de407 elementor-widget elementor-widget-jkit_client_logo" data-id="67de407" data-element_type="widget" data-widget_type="jkit_client_logo.default">
 				<div class="elementor-widget-container">
-					<div  class="jeg-elementor-kit jkit-client-logo arrow-bottom-middle jeg_module_2_1_678355c55eb9a"  data-id="jeg_module_2_1_678355c55eb9a" data-settings="{&quot;autoplay&quot;:true,&quot;autoplay_speed&quot;:2000,&quot;autoplay_hover_pause&quot;:true,&quot;show_navigation&quot;:false,&quot;navigation_left&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fa fa-angle-left\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;navigation_right&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fa fa-angle-right\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;show_dots&quot;:false,&quot;arrow_position&quot;:&quot;bottom&quot;,&quot;responsive&quot;:{&quot;desktop&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:1025},&quot;tablet&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:768},&quot;mobile&quot;:{&quot;items&quot;:3,&quot;margin&quot;:30,&quot;breakpoint&quot;:0}}}"><div class="client-list"><div class="client-track"><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/04_One.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/04_One.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/04_One.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/04_One-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div></div></div></div>				</div>
+					<div  class="jeg-elementor-kit jkit-client-logo arrow-bottom-middle jeg_module_2_1_678355c55eb9a"  data-id="jeg_module_2_1_678355c55eb9a" data-settings="{&quot;autoplay&quot;:true,&quot;autoplay_speed&quot;:2000,&quot;autoplay_hover_pause&quot;:true,&quot;show_navigation&quot;:false,&quot;navigation_left&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-left\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;navigation_right&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-right\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;show_dots&quot;:false,&quot;arrow_position&quot;:&quot;bottom&quot;,&quot;responsive&quot;:{&quot;desktop&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:1025},&quot;tablet&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:768},&quot;mobile&quot;:{&quot;items&quot;:3,&quot;margin&quot;:30,&quot;breakpoint&quot;:0}}}"><div class="client-list"><div class="client-track"><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/01_W-Latina-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/02_W-Spain-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/3_WK-records-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/04_One.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/04_One.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/04_One.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/04_One-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/05_Faro-Latino-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div></div></div></div>				</div>
 				</div>
 				<div class="elementor-element elementor-element-fa695c8 elementor-widget elementor-widget-jkit_client_logo" data-id="fa695c8" data-element_type="widget" data-widget_type="jkit_client_logo.default">
 				<div class="elementor-widget-container">
-					<div  class="jeg-elementor-kit jkit-client-logo arrow-bottom-middle jeg_module_2_2_678355c56021b"  data-id="jeg_module_2_2_678355c56021b" data-settings="{&quot;autoplay&quot;:true,&quot;autoplay_speed&quot;:2000,&quot;autoplay_hover_pause&quot;:true,&quot;show_navigation&quot;:false,&quot;navigation_left&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fa fa-angle-left\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;navigation_right&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fa fa-angle-right\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;show_dots&quot;:false,&quot;arrow_position&quot;:&quot;bottom&quot;,&quot;responsive&quot;:{&quot;desktop&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:1025},&quot;tablet&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:768},&quot;mobile&quot;:{&quot;items&quot;:3,&quot;margin&quot;:30,&quot;breakpoint&quot;:0}}}"><div class="client-list"><div class="client-track"><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div></div></div></div>				</div>
+					<div  class="jeg-elementor-kit jkit-client-logo arrow-bottom-middle jeg_module_2_2_678355c56021b"  data-id="jeg_module_2_2_678355c56021b" data-settings="{&quot;autoplay&quot;:true,&quot;autoplay_speed&quot;:2000,&quot;autoplay_hover_pause&quot;:true,&quot;show_navigation&quot;:false,&quot;navigation_left&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-left\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;navigation_right&quot;:&quot;&lt;span&gt;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;fas fa-angle-right\&quot;&gt;&lt;\/i&gt;&lt;\/span&gt;&quot;,&quot;show_dots&quot;:false,&quot;arrow_position&quot;:&quot;bottom&quot;,&quot;responsive&quot;:{&quot;desktop&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:1025},&quot;tablet&quot;:{&quot;items&quot;:5,&quot;margin&quot;:30,&quot;breakpoint&quot;:768},&quot;mobile&quot;:{&quot;items&quot;:3,&quot;margin&quot;:30,&quot;breakpoint&quot;:0}}}"><div class="client-list"><div class="client-track"><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/06_Believe-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/08_Torneos-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/10_Prisma-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/11_Mascot-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/12_Universal-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div><div class="client-slider item "><div class="image-list"><div class="content-image"><img loading="lazy" decoding="async" width="346" height="150" src="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" class="main-image" alt="Title" url="http://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png" source="library" srcset="https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney.png 346w, https://en.immersound.xyz/wp-content/uploads/2022/12/03_Disney-300x130.png 300w" sizes="(max-width: 346px) 100vw, 346px" /></div></div></div></div></div></div>				</div>
 				</div>
 					</div>
 		</div>
 					</div>
 		</section>
-				<section class="elementor-section elementor-top-section elementor-element elementor-element-ed2fe64 elementor-section-full_width elementor-section-stretched elementor-section-height-default elementor-section-height-default" data-id="ed2fe64" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
-						<div class="elementor-container elementor-column-gap-default">
-					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-8256b2d" data-id="8256b2d" data-element_type="column">
-			<div class="elementor-widget-wrap">
-							</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6e186e0" data-id="6e186e0" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-189b9f3b elementor-shape-circle e-grid-align-tablet-center animated-slow elementor-grid-0 e-grid-align-center elementor-invisible elementor-widget elementor-widget-social-icons" data-id="189b9f3b" data-element_type="widget" data-settings="{&quot;_animation&quot;:&quot;fadeInUp&quot;}" data-widget_type="social-icons.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-social-icons-wrapper elementor-grid">
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-animation-shrink elementor-repeater-item-c0163ab" href="https://www.linkedin.com/company/immersound-xyz/?originalSubdomain=ar" target="_blank">
-						<span class="elementor-screen-only">Linkedin</span>
-						<i class="fab fa-linkedin"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-tiktok elementor-animation-shrink elementor-repeater-item-310ab07" href="https://www.tiktok.com/@immersoundxyz" target="_blank">
-						<span class="elementor-screen-only">Tiktok</span>
-						<i class="fab fa-tiktok"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-63f86db" href="https://www.instagram.com/immersound.xyz/" target="_blank">
-						<span class="elementor-screen-only">Instagram</span>
-						<i class="fab fa-instagram"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-d54d883" href="https://www.youtube.com/@immersoundxyz" target="_blank">
-						<span class="elementor-screen-only">Youtube</span>
-						<i class="fab fa-youtube"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-animation-shrink elementor-repeater-item-494aab0" href="https://www.facebook.com/en.immersound.xyz" target="_blank">
-						<span class="elementor-screen-only">Facebook</span>
-						<i class="fab fa-facebook"></i>					</a>
-				</span>
-							<span class="elementor-grid-item">
-					<a class="elementor-icon elementor-social-icon elementor-social-icon-apple elementor-animation-shrink elementor-repeater-item-e823309" href="https://music.apple.com/ar/playlist/immersound-spatial-audio-songs/pl.u-NpXmzaVI4AaXbM7" target="_blank">
-						<span class="elementor-screen-only">Apple</span>
-						<i class="fab fa-apple"></i>					</a>
-				</span>
-					</div>
-						</div>
-				</div>
-				<div class="elementor-element elementor-element-ed9d227 elementor-widget elementor-widget-spacer" data-id="ed9d227" data-element_type="widget" data-widget_type="spacer.default">
-				<div class="elementor-widget-container">
-							<div class="elementor-spacer">
-			<div class="elementor-spacer-inner"></div>
-		</div>
-						</div>
-				</div>
-					</div>
-		</div>
-				<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-3d5dc34" data-id="3d5dc34" data-element_type="column">
-			<div class="elementor-widget-wrap elementor-element-populated">
-							</div>
-		</div>
-					</div>
-		</section>
+				
 				<section class="elementor-section elementor-top-section elementor-element elementor-element-e85eca7 elementor-section-stretched elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="e85eca7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;shape_divider_top&quot;:&quot;wave-brush&quot;,&quot;stretch_section&quot;:&quot;section-stretched&quot;}">
 					<div class="elementor-shape elementor-shape-top" data-negative="false">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 283.5 27.8" preserveAspectRatio="none">
@@ -922,7 +656,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 		</div>
 				<div class="elementor-column elementor-col-25 elementor-top-column elementor-element elementor-element-17ac086" data-id="17ac086" data-element_type="column">
 			<div class="elementor-widget-wrap elementor-element-populated">
-						<div class="elementor-element elementor-element-1e7261f elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="1e7261f" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fa fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+						<div class="elementor-element elementor-element-1e7261f elementor-nav-menu--dropdown-tablet elementor-nav-menu__text-align-aside elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="1e7261f" data-element_type="widget" data-settings="{&quot;layout&quot;:&quot;horizontal&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i class=\&quot;fas fa-caret-down\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;fa-solid&quot;},&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
 				<div class="elementor-widget-container">
 								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
 				<ul id="menu-1-1e7261f" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-2 current_page_item menu-item-3908"><a href="https://en.immersound.xyz/" aria-current="page" class="elementor-item elementor-item-active">HOME</a></li>
