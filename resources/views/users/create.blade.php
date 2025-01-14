@@ -16,15 +16,16 @@
 
             <div class="form-group">
                 <label for="password" class="form-label">Contraseña: <span class="text-red-400">*</span></label>
-                <input type="password" name="password" id="password" class="form-input" required>
+                <input type="password" name="password" id="password" class="form-input" minlength="8" required>
             </div>
 
             <div class="form-group">
                 <label for="role_id" class="form-label">Rol: <span class="text-red-400">*</span></label>
                 <select name="role_id" id="role_id" class="form-select" required>
-                    <option value="">Selecciona un rol</option>
                     @foreach ($roles as $role)
-                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                    <option value="{{ $role->id }}" {{ $role->name === 'User' ? 'selected' : '' }}>
+                        {{ $role->name }}
+                    </option>
                     @endforeach
                 </select>
             </div>

@@ -6,7 +6,6 @@
     display: none;
 }
 
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* Temporalmente comentamos Tailwind para usar CSS puro */
@@ -88,7 +87,6 @@ input[type="text"] {
     border-radius: 0.375rem;
     background-color: #fff;
 }
-
 
 /* Botones */
 .button {
@@ -752,7 +750,10 @@ body.modal-open {
     border-bottom: 2px solid #D53F8C; /* Color del borde inferior */
 }
 
-
+/* Estilo para las filas alternas */
+.table tr:nth-child(even) {
+    background-color: #F7F7F7; /* Color de fondo para filas pares */
+}
 
 /* Estilo para el encabezado */
 .table thead th {
@@ -1024,72 +1025,4 @@ ul.list-disc li {
 
 #user-create-form {
     margin-top: 100px; /* Ajusta este valor según sea necesario */
-}
-
-
-/* Aplica el estilo a todos los inputs y textareas */
-input, 
-textarea, 
-select {
-    background-color: #2f2f2f;
-    color: #ffffff; /* Color del texto para contraste */
-    border: 1px solid #444; /* Borde para diferenciarlos */
-    padding: 10px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    outline: none; /* Quita el efecto de borde predeterminado */
-    font-size: 16px; /* Tamaño del texto */
-    width: 100%; /* Asegura que los elementos ocupen todo el ancho disponible */
-    box-sizing: border-box; /* Ajusta el padding dentro del ancho total */
-}
-
-/* Para el input tipo "number" */
-input[type="number"] {
-    -moz-appearance: textfield; /* Para Firefox */
-}
-
-
-/* Efecto de foco (cuando el usuario selecciona el elemento) */
-input:focus, 
-textarea:focus, 
-select:focus {
-    border-color: #555; /* Cambia el color del borde al enfocar */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Sombra para un efecto visual */
-}
-
-/* Estilo para el input tipo "submit", "button", "reset" */
-input[type="submit"], 
-input[type="button"], 
-input[type="reset"] {
-    background-color: #444; /* Fondo para botones */
-    color: #ffffff; /* Texto blanco */
-    border: 1px solid #666;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición suave */
-}
-
-input[type="submit"]:hover, 
-input[type="button"]:hover, 
-input[type="reset"]:hover {
-    background-color: #555; /* Cambio de color al pasar el cursor */
-}
-
-/* Para selects */
-select {
-    background-color: #2f2f2f;
-    color: #ffffff;
-    border: 1px solid #444;
-    padding: 10px;
-    width: 100%; /* Para asegurar que ocupe todo el espacio disponible */
-    box-sizing: border-box;
-}
-
-select:focus {
-    border-color: #555;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-input[type="number"], 
-textarea {
-    background-color: #2f2f2f;
-    color: white; /* Si necesitas que el texto sea blanco para mejor contraste */
 }

@@ -86,16 +86,8 @@ class PackageController extends Controller
      */
     public function edit(Package $package)
     {
-        $users = User::whereNull('deleted_at')
-        ->get()
-        ->map(function($user) {
-            return [
-                'value' => $user->id,
-                'label' => $user->id . ' (' . $user->email . ')'  // Combinando id y email
-            ];
-        });
 
-        return view('packages.edit', compact('package','users'));
+        return view('packages.edit', compact('package'));
     }
 
     /**

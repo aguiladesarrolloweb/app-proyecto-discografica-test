@@ -82,15 +82,15 @@ class TrackController extends Controller
      */
     public function update(UpdateTrackRequest $request)
     {
-        try 
-        {
+       /*  try 
+        { */
             $this->track_service->updateTrack($request);
             return redirect()->route('tracks.edit',["track" =>$request->input('id')])->banner('Track Modificado Exitosamente');
-        } 
+       /*  } 
         catch (\Throwable $th) 
         {
             return redirect()->route('tracks.edit',["track" =>$request->input('id')])->dangerBanner('Error a la hora de modificar Track');
-        }
+        } */
 
 
     }

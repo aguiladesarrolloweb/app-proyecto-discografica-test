@@ -9,18 +9,11 @@
                 
                 <input type="hidden" name="package_id" value="{{$package->id}}">
 
-                <!-- Select User -->
-                <div class="mb-4">
-                    <x-select2 
-                        :options="$users"
-                        name="user_id_selected"
-                        placeholder="Selecciona un Usuario"
-                    />
-                </div>
+                
 
                  <!-- Package Type -->
                  <div class="mb-4">
-                    <label for="package_id" class="block text-sm font-medium text-white mb-1">
+                    <label for="package_type_id" class="block text-sm font-medium text-white mb-1">
                         Tipo Paquete
                     </label>
                     <select name="package_type_id" id="package_type_id" 

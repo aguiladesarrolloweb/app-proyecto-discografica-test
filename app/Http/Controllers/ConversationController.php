@@ -58,8 +58,8 @@ class ConversationController extends Controller
             ->get()
             ->map(function($user) {
                 return [
-                    'value' => $user->user_id,
-                    'label' => $user->user_id . ' (' . $user->email . ')'  // Combinando id y email
+                    'value' => $user->id,
+                    'label' => $user->id . ' (' . $user->email . ')'  // Combinando id y email
                 ];
             });
         }
@@ -75,8 +75,8 @@ class ConversationController extends Controller
             ->get()
             ->map(function($user) {
                 return [
-                    'value' => $user->user_id,
-                    'label' => $user->user_id . ' (' . $user->email . ')'  // Combinando id y email
+                    'value' => $user->id,
+                    'label' => $user->id . ' (' . $user->email . ')'  // Combinando id y email
                 ];
             });
         }

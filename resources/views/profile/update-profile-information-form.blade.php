@@ -82,7 +82,6 @@
                     </p>
                 @endif
             @endif
-        </div>
 
         <!-- Address -->
         <div class="col-span-6 sm:col-span-4">
@@ -167,6 +166,8 @@
         </div>
 
 
+
+        </div>
     </x-slot>
 
     <x-slot name="actions">

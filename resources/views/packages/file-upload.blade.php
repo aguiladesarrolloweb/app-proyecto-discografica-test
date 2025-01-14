@@ -1,6 +1,5 @@
 <x-app-layout>
 
-
     <form action="{{ route('files.upload') }}" method="POST" enctype="multipart/form-data">
         @csrf
     

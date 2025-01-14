@@ -96,6 +96,7 @@ class TrackService
         /* $last_format_song = Track::getLastFormatSong($request->input('id')); */
         $package = Package::findOrFail($track->package_id);
         $date = ($request->input('status') === FileStatusEnum::COMPLETED->value) ? now() : null;
+        $status = ($request->input('status') !== NULL) ? $request->input('status') : $track->status;
 
 
        /*  $duration = $track->duration;
@@ -171,7 +172,7 @@ class TrackService
             /* 'duration' => $duration, */
             'final_file' => $request->input('final_file'),
             'comments' => $request->input('comments'),
-            'status' => $request->input('status'),
+            'status' => $status,
             'completion_date' => $date,
             /* 'file_format' => $file_format,
             'current_version' => $track->current_version + 1, */

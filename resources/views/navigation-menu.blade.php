@@ -1,6 +1,3 @@
-
-
-
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -90,11 +87,12 @@
                                     {{ __('Create') }}
                                 </x-dropdown-link>
                                 @endcan
-                                
+                                {{-- <x-dropdown-link href="{{ route('conversations.edit') }}">
+                                    {{ __('Edit') }}
+                                </x-dropdown-link> --}}
                             </div>
                         </div>
                     </div>
-
 
                     <!-- Package Dropdown -->
                     <div class="relative" x-data="{ open: false }">
@@ -136,7 +134,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+
 
             {{-- LOCALE --}}
             <div class="relative">
@@ -151,6 +149,8 @@
                         <a href="{{ route('lang.change', ['locale' => 'pt']) }}" class="text-white hover:text-blue-600 font-medium">PT</a>
                     </li>
                 </ul>
+            </div>
+
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -313,6 +313,21 @@
                 </x-responsive-nav-link>
             </div>
             @endcan
+
+            {{-- LOCALE --}}
+            <div class="relative">
+                <ul class="flex space-x-4 px-4 py-2 rounded shadow ">
+                    <li>
+                        <a href="{{ route('lang.change', ['locale' => 'es']) }}" class="text-white hover:text-blue-600 font-medium">ES</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('lang.change', ['locale' => 'en']) }}" class="text-white hover:text-blue-600 font-medium">EN</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('lang.change', ['locale' => 'pt']) }}" class="text-white hover:text-blue-600 font-medium">PT</a>
+                    </li>
+                </ul>
+            </div>
         </div>
 
         <!-- Responsive Settings Options -->

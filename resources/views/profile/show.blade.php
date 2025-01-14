@@ -21,8 +21,6 @@
                 <x-section-border />
             @endif
 
-            
-
             {{-- @if (Laravel\Fortify\Features::canManageTwoFactorAuthentication())
                 <div class="mt-10 sm:mt-0">
                     @livewire('profile.two-factor-authentication-form')
