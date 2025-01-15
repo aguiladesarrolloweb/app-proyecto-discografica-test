@@ -6,9 +6,9 @@
 
     <!-- Contenedor del formulario lado derecho -->
     <div class="flex flex-col items-center w-1/4 bg-black border-2 border-white rounded-lg pb-4">
-        <div class="mb-2">
+        {{-- <div class="mb-2">
             {{ $logo }}
-        </div>
+        </div> --}}
 
         <div class="w-full sm:max-w-sm mt-2 px-4 py-3 bg-white shadow-md overflow-hidden sm:rounded-lg">
             {{ $slot }}
